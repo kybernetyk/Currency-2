@@ -8,6 +8,8 @@
 
 #import "EditListViewController.h"
 #import "AddCurrencyViewController.h"
+#import "JSManagedConversion.h"
+
 #import "JSDataCore.h"
 
 @implementation EditListViewController
@@ -38,27 +40,51 @@
 }
 */
 
+- (void) doneButton: (id) sender
+{
+
+/*	int i = 0;
+	for(RowObj *row in myTableViewData) {
+		row.displayOrder = [NSNumber numberWithInt:i++];
+	}
+	[helper saveManagedObjectContext];*/
+	
+//	[[self navigationController] popViewControllerAnimated: YES];
+}
+
 #pragma mark -
 #pragma mark view stuff
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+//
+//	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle: @"Add" style: UIBarButtonItemStylePlain target: self action: @selector(insertNewObject)];
+	
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target: self action: @selector(insertNewObject)];
 
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle: @"Add" style: UIBarButtonItemStylePlain target: self action: @selector(insertNewObject)];
+	
 	[[self navigationItem] setRightBarButtonItem: addButton];
 	[addButton release];
 	
 	
+//	[[self navigationItem] setLeftBarButtonItem: [self editButtonItem]];
+//	[[self editButtonItem] setEditing: YES animated: NO];
 	
-	[[self navigationItem] setLeftBarButtonItem: [self editButtonItem]];
+	[self setEditing: YES animated: NO];
 
+	//[[self editButtonItem] setTarget: self];
+	//[[self editButtonItem] setAction: @selector(doneButton:)];
+
+	[self setTitle: @"Manage List"];
+	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) 
 	{
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
 	}
-
+	
+	
 #ifdef CUSTOM_GRAPHICS	
 	[[self view] setBackgroundColor:  [UIColor clearColor]];
 	backgroundView =  [[UIImageView alloc] initWithFrame: [[self view] frame]];
@@ -73,6 +99,9 @@
 #ifdef CUSTOM_GRAPHICS
 	[self.tableView.superview insertSubview: backgroundView belowSubview: self.tableView];
 #endif
+	
+//	[[self tableView] setEditing: YES];
+
     [super viewWillAppear:animated];
 }
 
@@ -81,11 +110,19 @@
     [super viewDidAppear:animated];
 }
 */
-/*
-- (void)viewWillDisappear:(BOOL)animated {
+
+- (void)viewWillDisappear:(BOOL)animated 
+{
 	[super viewWillDisappear:animated];
+   	JSDataCore *dataCore = [JSDataCore sharedInstance];
+	NSError *error = nil;
+	if (![[dataCore managedObjectContext] save:&error]) 
+	{
+	 	NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
 }
-*/
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -137,7 +174,7 @@
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending: YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortOrder" ascending: YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
@@ -158,7 +195,12 @@
 
 
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller 
+{
+//	JSDataCore *dataCore = [JSDataCore sharedInstance];	
+	NSLog(@"changed content!");
+	
+	
 	// In the simplest, most efficient, case, reload the table view.
 	[self.tableView reloadData];
 }
@@ -184,7 +226,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
 	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+	  return [sectionInfo numberOfObjects];
 }
 
 
@@ -198,7 +240,8 @@
 	 if (cell == nil) 
 	 {
 		 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-
+		 [cell setSelectionStyle: UITableViewCellSelectionStyleNone];
+		 cell.showsReorderControl = YES;
 #ifdef CUSTOM_GRAPHICS
 		 UIImageView *iv = [[UIImageView alloc] initWithFrame: CGRectNull];
 		 [iv autorelease];
@@ -227,7 +270,7 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here -- for example, create and push another view controller.
 	/*
 	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -237,7 +280,7 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
-}
+//}
 
 
 /*
@@ -250,11 +293,12 @@
 
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+		
     if (editingStyle == UITableViewCellEditingStyleDelete) 
 	{
-        // Delete the managed object for the given index path
+		// Delete the managed object for the given index path
 		NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
 		[context deleteObject:[fetchedResultsController objectAtIndexPath:indexPath]];
 		
@@ -276,16 +320,42 @@
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // The table view should not be re-orderable.
-    return NO;
+- (BOOL)tableView:(UITableView *)tableview canMoveRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	return YES;	
 }
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath 
+{
+	if ([fromIndexPath section] == [toIndexPath section] &&
+		[fromIndexPath row] == [toIndexPath row])
+	{
+		NSLog(@"move same on same lol. how gay!");
+		return;
+	}
+	
+	NSMutableArray *workingData = [[[self fetchedResultsController] fetchedObjects] mutableCopy];
+	JSManagedConversion *objectToMove = [workingData objectAtIndex: [fromIndexPath row]];
+	
+	[workingData removeObjectAtIndex: [fromIndexPath row]];
+	[workingData insertObject: objectToMove atIndex: [toIndexPath row]];
+	
+	int i = 0;
+	for(JSManagedConversion *conv in workingData) 
+	{
+		[conv setSortOrder: [NSNumber numberWithInt: i++]];
+	}
+	[workingData autorelease];
+}
 
 
 
 - (void)dealloc 
 {
+	NSLog(@"edit list view controller dealloc: %i", [fetchedResultsController retainCount]);
+	[fetchedResultsController release];
+	fetchedResultsController = nil;
+	
 #ifdef CUSTOM_GRAPHICS
 	[backgroundView release];
 #endif

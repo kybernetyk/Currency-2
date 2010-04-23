@@ -25,12 +25,18 @@
 	[[self navigationItem] setHidesBackButton: YES];
 
 	
-	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle: @"Save" style: UIBarButtonItemStyleDone target: self action: @selector(confirmAction)];
+//	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle: @"Save" style: UIBarButtonItemStyleDone target: self action: @selector(confirmAction)];
+	
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemSave target:self action: @selector(confirmAction)];
+
 	[[self navigationItem] setRightBarButtonItem: saveButton];
 	[saveButton release];
 
 	
-	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle: @"Cancel" style: UIBarButtonItemStylePlain target: self action: @selector(cancelAction)];
+//	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle: @"Cancel" style: UIBarButtonItemStylePlain target: self action: @selector(cancelAction)];
+	
+	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target: self action: @selector(cancelAction)];
+
 	[[self navigationItem] setLeftBarButtonItem: cancelButton];
 	[cancelButton release];
 	
@@ -101,6 +107,41 @@
 	//[[JSCurrencyList sharedCurrencyList] updateAvailableCurrencyList];
 }
 
+- (NSNumber *) lastSortOrder
+{
+	JSDataCore *dataCore = [JSDataCore sharedInstance];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Conversion" inManagedObjectContext: [dataCore managedObjectContext]];
+	[fetchRequest setEntity:entity];
+	
+	[fetchRequest setFetchBatchSize:20];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortOrder" ascending: YES];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	[fetchRequest setSortDescriptors:sortDescriptors];
+	
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] 
+															 initWithFetchRequest:fetchRequest 
+															 managedObjectContext: [dataCore managedObjectContext] 
+															 sectionNameKeyPath:nil 
+															 cacheName:@"Root"];
+	NSError *err;
+	[aFetchedResultsController performFetch: &err];
+	NSNumber *ret = [[[aFetchedResultsController fetchedObjects] lastObject] sortOrder];
+	
+	//NSLog(@"%@",[aFetchedResultsController fetchedObjects]);
+	
+	[fetchRequest release];
+	[sortDescriptor release];
+	[sortDescriptors release];
+	[aFetchedResultsController release];
+	return ret;
+	
+//	return [aFetchedResultsController autorelease];
+	
+}
+
 - (void) confirmAction
 {
 	JSDataCore *dataCore = [JSDataCore sharedInstance];	
@@ -131,6 +172,14 @@
 	[newManagedObject setFromCurrency: [fromCurrency ISOCode]];
 	[newManagedObject setToCurrency: [toCurrency ISOCode]];
 	[newManagedObject setConversionRatio: num];
+	
+	
+	NSInteger lastOrder = [[self lastSortOrder] integerValue];
+	lastOrder++;
+	
+	[newManagedObject setSortOrder: [NSNumber numberWithInteger: lastOrder] ];
+	
+	NSLog(@"last Order: %@",[self lastSortOrder]);
 	
 //	[newManagedObject setValue: [fromCurrency valueForKey: @"ISOCode"]  forKey: @"fromCurrency"];
 //	[newManagedObject setValue: [toCurrency valueForKey: @"ISOCode"] forKey: @"toCurrency"];
@@ -195,45 +244,7 @@
 
 #pragma mark -
 #pragma mark Fetched results controller
-/*- (NSFetchedResultsController *)fetchedResultsController 
-{
-    if (fetchedResultsController != nil) 
-	{
-        return fetchedResultsController;
-    }
-	
-   	JSDataCore *dataCore = [JSDataCore sharedInstance];
-    
-	// Create the fetch request for the entity.
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Currency" inManagedObjectContext: [dataCore managedObjectContext]];
-	[fetchRequest setEntity:entity];
-	
-	// Set the batch size to a suitable number.
-	[fetchRequest setFetchBatchSize:20];
-	
-	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ISOCode" ascending: YES];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-	
-	[fetchRequest setSortDescriptors:sortDescriptors];
-	
-	// Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext: [dataCore managedObjectContext] sectionNameKeyPath:nil cacheName:@"Root"];
-    aFetchedResultsController.delegate = self;
-	//self.fetchedResultsController = aFetchedResultsController;
-	[self setFetchedResultsController: aFetchedResultsController];
-	
-	[aFetchedResultsController release];
-	[fetchRequest release];
-	[sortDescriptor release];
-	[sortDescriptors release];
-	
-	return fetchedResultsController;
-}    
-*/
+
 
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller 

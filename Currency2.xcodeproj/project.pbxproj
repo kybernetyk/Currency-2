@@ -25,6 +25,10 @@
 		038BE9051173AA1700B75B43 /* JSManagedConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9041173AA1700B75B43 /* JSManagedConversion.m */; };
 		038BE9671173AEE300B75B43 /* JSManagedCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9661173AEE300B75B43 /* JSManagedCurrency.m */; };
 		038BEA5611745F6E00B75B43 /* JSDataCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BEA5511745F6E00B75B43 /* JSDataCore.m */; };
+		03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC74A117C3C730031EF67 /* SettingsViewController.m */; };
+		03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DFC74B117C3C730031EF67 /* SettingsViewController.xib */; };
+		03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC9611181C13D0031EF67 /* HelpViewController.m */; };
+		03DFC9641181C13D0031EF67 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DFC9621181C13D0031EF67 /* HelpViewController.xib */; };
 		03F514CD1175C7C8009C0722 /* ConversionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */; };
 		03F514CE1175C7C8009C0722 /* ConversionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */; };
 		03F515321175CC69009C0722 /* JSCurrencyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F515311175CC69009C0722 /* JSCurrencyList.m */; };
@@ -78,6 +82,12 @@
 		038BE9661173AEE300B75B43 /* JSManagedCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSManagedCurrency.m; sourceTree = "<group>"; };
 		038BEA5411745F6E00B75B43 /* JSDataCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDataCore.h; sourceTree = "<group>"; };
 		038BEA5511745F6E00B75B43 /* JSDataCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDataCore.m; sourceTree = "<group>"; };
+		03DFC749117C3C730031EF67 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
+		03DFC74A117C3C730031EF67 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
+		03DFC74B117C3C730031EF67 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		03DFC9601181C13D0031EF67 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		03DFC9611181C13D0031EF67 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		03DFC9621181C13D0031EF67 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpViewController.xib; path = Classes/HelpViewController.xib; sourceTree = "<group>"; };
 		03F514CA1175C7C8009C0722 /* ConversionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversionDetailViewController.h; sourceTree = "<group>"; };
 		03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionDetailViewController.m; sourceTree = "<group>"; };
 		03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConversionDetailViewController.xib; path = Classes/ConversionDetailViewController.xib; sourceTree = "<group>"; };
@@ -144,6 +154,10 @@
 				038BEA5511745F6E00B75B43 /* JSDataCore.m */,
 				03F514CA1175C7C8009C0722 /* ConversionDetailViewController.h */,
 				03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */,
+				03DFC749117C3C730031EF67 /* SettingsViewController.h */,
+				03DFC74A117C3C730031EF67 /* SettingsViewController.m */,
+				03DFC9601181C13D0031EF67 /* HelpViewController.h */,
+				03DFC9611181C13D0031EF67 /* HelpViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -186,6 +200,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03DFC9621181C13D0031EF67 /* HelpViewController.xib */,
+				03DFC74B117C3C730031EF67 /* SettingsViewController.xib */,
 				03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */,
 				0378E4DF11737A3B00C783F5 /* AddCurrencyViewController.xib */,
 				0378E30E11735EE000C783F5 /* back.png */,
@@ -269,6 +285,8 @@
 				0378E3861173688D00C783F5 /* EditListViewController.xib in Resources */,
 				0378E4E111737A3B00C783F5 /* AddCurrencyViewController.xib in Resources */,
 				03F514CE1175C7C8009C0722 /* ConversionDetailViewController.xib in Resources */,
+				03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */,
+				03DFC9641181C13D0031EF67 /* HelpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +311,8 @@
 				03F514CD1175C7C8009C0722 /* ConversionDetailViewController.m in Sources */,
 				03F515321175CC69009C0722 /* JSCurrencyList.m in Sources */,
 				03F5A72E117899290067E642 /* Reachability.m in Sources */,
+				03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */,
+				03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,7 @@
 	UITableView *tableView;
 	
 	UIBarButtonItem *doneEditingButton;
+	UIBarButtonItem *editListButton;
 #ifdef CUSTOM_GRAPHICS
 	UIImageView *backgroundView;
 #endif

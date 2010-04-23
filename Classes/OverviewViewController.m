@@ -12,6 +12,7 @@
 #import "JSManagedConversion.h"
 #import "JSDataCore.h"
 #import "ConversionDetailViewController.h"
+#import "EditListViewController.h"
 
 @implementation OverviewViewController
 @synthesize fetchedResultsController;
@@ -57,6 +58,15 @@
 #pragma mark -
 #pragma mark view stuff
 
+- (void) showEditView: (id) sender
+{
+	NSLog(@"show edit view");
+	EditListViewController *elvc = [[EditListViewController alloc] initWithNibName: @"EditListViewController" bundle: nil];
+	[[self navigationController] pushViewController: elvc animated: YES];
+	[elvc release];
+	
+//	[[self tableView] setEditing: YES animated: YES];
+}
 
 - (void)viewDidLoad 
 {
@@ -66,10 +76,13 @@
 	//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
 	doneEditingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeypad:)];
+	editListButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemEdit target:self action:@selector(showEditView:)];
+	//editListButton = [self editButtonItem];
 	
 	
 	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh target: self action: @selector(updateRates)];
 	[[self navigationItem] setLeftBarButtonItem: refreshButton];
+	[[self navigationItem] setRightBarButtonItem: editListButton];
 	[refreshButton release];
 
 
@@ -79,17 +92,13 @@
 	NSNumber *num = [defs objectForKey: @"lastUserInput"];
 	[editField setText: [NSString stringWithFormat: @"%@", num]];
 
-	
-	//setup bookmark bar
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark0"]] forSegmentAtIndex: 0];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark1"]] forSegmentAtIndex: 1];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark2"]] forSegmentAtIndex: 2];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark3"]] forSegmentAtIndex: 3];
+
+	[self buildBookmarkBar];
 	
 	[[self navigationItem] setTitleView: editField];
 	
 	
-
+	NSLog(@"my retcount %i",[self retainCount]);
 	
 	
 	
@@ -121,9 +130,31 @@
 	}
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRates) name: @"watchlistDidChange" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
 }
 
+- (void) buildBookmarkBar
+{
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	
 
+	//setup bookmark bar
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark0"]] forSegmentAtIndex: 0];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark1"]] forSegmentAtIndex: 1];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark2"]] forSegmentAtIndex: 2];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark3"]] forSegmentAtIndex: 3];
+	
+}
+
+- (void) defaultsDidChange: (NSNotification *) aNotification
+{
+	NSLog(@"defaults changed biatch!");
+	
+	NSLog (@"%@",[aNotification object]);
+	
+	[self buildBookmarkBar];
+	[self updateTableView: self];
+	
+}
 
 
 - (void)viewWillAppear:(BOOL)animated 
@@ -255,6 +286,10 @@
 	if (cell == nil) 
 	{
 		cell = (AtomTableViewCell*)[[[NSBundle mainBundle] loadNibNamed:@"AtomCell" owner:self options: nil] objectAtIndex:0];
+		
+	//	UISwitch *mySwitch = [[[UISwitch alloc] initWithFrame:CGRectZero] autorelease];
+	//	[cell addSubview: mySwitch];
+	//	[cell setAccessoryView: mySwitch];
 	}
 //	NSTimeInterval stop = [[NSDate date] timeIntervalSince1970];
 //	NSLog(@"load: %f",stop - start);
@@ -398,7 +433,8 @@
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     // The table view should not be re-orderable.
     return NO;
 }
@@ -429,7 +465,7 @@
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending: YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortOrder" ascending: YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
@@ -452,6 +488,8 @@
 // NSFetchedResultsControllerDelegate method to notify the delegate that all section and object changes have been processed. 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller 
 {
+	NSLog(@"overview content changed!");
+	
 //	[self updateRates];
 	// In the simplest, most efficient, case, reload the table view.
 	[self.tableView reloadData];
@@ -594,7 +632,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
 //	currentTextField = nil;
-	[[self navigationItem] setRightBarButtonItem: nil];
+	[[self navigationItem] setRightBarButtonItem: editListButton];
 	[dotButton setHidden: YES];
 }
 
@@ -618,6 +656,8 @@
 
 - (void)dealloc 
 {
+	NSLog(@"overview controller wech");
+	
 #ifdef CUSTOM_GRAPHICS	
 	[backgroundView release];
 #endif

@@ -26,6 +26,7 @@
 @property (retain) NSDecimalNumber *conversionRatio;
 @property (retain) NSDate *timeStamp;
 @property (retain) NSDate *lastUpdated;
+@property (retain) NSNumber *sortOrder;
 
 @property (readonly) BOOL isUpdating;
 

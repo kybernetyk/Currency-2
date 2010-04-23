@@ -17,7 +17,7 @@
 @dynamic conversionRatio;
 @dynamic timeStamp;
 @dynamic lastUpdated;
-
+@dynamic sortOrder;
 
 - (void) remoteUpdate
 {
