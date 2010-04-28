@@ -99,11 +99,12 @@
 
 - (NSString *) getLastCachedImage
 {
+	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *cacheDirectory = [[JSDataCore sharedInstance] applicationCachesDirectory];
 	
 	NSError *err;
-	NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: cacheDirectory error: &err];
-	if (!contents)
+	NSArray *contents = [fileManager contentsOfDirectoryAtPath: cacheDirectory error: &err];
+	if (!contents || [contents count] <= 0)
 	{
 		NSLog(@"no contents. error: %@",[err localizedDescription]);
 		return nil;
@@ -112,15 +113,37 @@
 	NSString *searchString = [NSString stringWithFormat: @"%@_%@",[conversion fromCurrency],[conversion toCurrency]];
 	NSPredicate *filter = [NSPredicate predicateWithFormat: @"SELF contains 'png' AND SELF contains %@",searchString];
 	NSArray *filteredContents = [contents filteredArrayUsingPredicate: filter];
+	NSLog(@"filtered contents: %@",filteredContents);
 	
-	NSString *filename = [filteredContents lastObject];
+	/* sort the filtered contents by file creation date. chose then the newest file */
+	NSDictionary *currentFileAttributes = nil;
+	NSDate* currentFileDate = nil;
+	NSString* latestFile = nil;
+	NSDate* latestFileDate = [NSDate distantPast];
+	for (NSString* fname in filteredContents) 
+	{
+		//check file is newer
+		currentFileAttributes = [fileManager fileAttributesAtPath:[NSString stringWithFormat:@"%@/%@",cacheDirectory,fname] traverseLink:YES];
+		currentFileDate = [currentFileAttributes objectForKey:NSFileModificationDate];
+		if([currentFileDate laterDate:latestFileDate] == currentFileDate)
+		{
+			latestFileDate = currentFileDate;
+			latestFile = fname;
+		}
+	}
+	
+	NSString *filename = latestFile;
 	if (!filename)
 		return nil;
 	
 	filename = [NSString stringWithFormat:@"%@/%@",cacheDirectory,filename];
 
 	if ([[NSFileManager defaultManager] fileExistsAtPath: filename])
+	{	
+		NSLog(@"latest cached file: %@",filename);
 		return filename;
+		
+	}
 
 	return nil;
 }
