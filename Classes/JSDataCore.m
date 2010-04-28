@@ -74,6 +74,10 @@ static JSDataCore *sharedSingleton = nil;
     return self;    
 }
 
+- (void) reset
+{
+}
+
 
 -(id)init 
 {
@@ -85,9 +89,6 @@ static JSDataCore *sharedSingleton = nil;
     return self;
 }
 
-- (void) reset
-{
-}
 
 #pragma mark -
 #pragma mark Core Data stack
@@ -168,10 +169,27 @@ static JSDataCore *sharedSingleton = nil;
 /**
  Returns the path to the application's Documents directory.
  */
-- (NSString *)applicationDocumentsDirectory {
+- (NSString *)applicationDocumentsDirectory 
+{
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
+#pragma mark -
+#pragma mark App's Cache
+
+- (NSString *) applicationCachesDirectory
+{
+/*	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *cacheDir = [paths objectAtIndex:0];
+	
+	NSLog(@"cache dir: %@",cacheDir);
+	
+	BOOL did = [cacheDir writeToURL: [NSURL fileURLWithPath: [NSString stringWithFormat: @"%@/lol.txt", cacheDir]] atomically: YES];
+	NSLog(@"did: %@",[NSNumber numberWithBool: did]);
+	*/
+	
+	return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+}
 
 
 

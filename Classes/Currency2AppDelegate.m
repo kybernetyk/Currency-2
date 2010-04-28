@@ -9,7 +9,6 @@
 #import "Currency2AppDelegate.h"
 #import "JSDataCore.h"
 #import "JSCurrencyList.h"
-#import "Reachability.h"
 
 @implementation Currency2AppDelegate
 
@@ -40,7 +39,6 @@
 	
 	[defs registerDefaults: reg];
 	
-	
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
@@ -50,9 +48,8 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
 	
-	Reachability *hostReach = [[Reachability reachabilityWithHostName: @"download.finance.yahoo.com"] retain];
-	[hostReach startNotifer];
-	
+	reachability = [[Reachability reachabilityWithHostName: @"download.finance.yahoo.com"] retain];
+	[reachability startNotifer];
 
 	
     // Add the tab bar controller's current view as a subview of the window
@@ -122,6 +119,8 @@
 
 - (void)dealloc 
 {
+	[reachability stopNotifer];
+	[reachability release];
 	[tabBarController release];
     [window release];
     [super dealloc];

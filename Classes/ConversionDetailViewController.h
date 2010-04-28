@@ -12,6 +12,8 @@
 @interface ConversionDetailViewController : UIViewController 
 {
 	JSManagedConversion *conversion;
+	IBOutlet UIWebView *chartImageView;
+	IBOutlet UIActivityIndicatorView *activityIndicator;
 }
 
 @property (readwrite, retain) JSManagedConversion *conversion;

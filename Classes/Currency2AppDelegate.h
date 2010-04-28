@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "OverviewViewController.h"
 #import "EditListViewController.h"
+#import "Reachability.h"
+
 
 @interface Currency2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> 
 {
@@ -18,6 +20,8 @@
 	
 	OverviewViewController *overviewViewController;
 	EditListViewController *editListViewController;
+	
+	Reachability *reachability;
 	
 	BOOL isOnline;
 }

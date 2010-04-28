@@ -138,17 +138,17 @@
 	[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
 	
 	if ([indexPath section] == 0 && [indexPath row] == 0)
-		[cell setText: @"Quick Access Bookmarks"];
+		[[cell textLabel] setText: @"Quick Access Bookmarks"];
 
 	if ([indexPath section] == 0 && [indexPath row] == 1)
-		[cell setText: @"Offline Mode"];
+		[[cell textLabel] setText: @"Offline Mode"];
     
     // Set up the cell...
 	if ([indexPath section] == 1 && [indexPath row] == 0)
-		[cell setText: @"A currency is missing"];
+		[[cell textLabel] setText: @"A currency is missing"];
 	
 	if ([indexPath section] == 2 && [indexPath row] == 0)
-		[cell setText: @"Contact Developer"];
+		[[cell textLabel] setText: @"Contact Developer"];
 	
 	
 	

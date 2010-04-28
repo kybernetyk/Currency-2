@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "JSManagedCurrency.h"
 
 @interface JSManagedConversion : NSManagedObject 
 {
@@ -28,8 +28,11 @@
 @property (retain) NSDate *lastUpdated;
 @property (retain) NSNumber *sortOrder;
 
+@property (retain) JSManagedCurrency *fC;
+@property (retain) JSManagedCurrency *tC;
+
 @property (readonly) BOOL isUpdating;
 
-- (BOOL) remoteUpdate;
+- (void) remoteUpdate;
 
 @end

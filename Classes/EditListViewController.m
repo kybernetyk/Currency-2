@@ -220,6 +220,8 @@
 		return @"You Current Watchlist";
 	if (section == 1)
 		return @"Add/Remove";
+	
+	return nil;
 }
 #endif
 
@@ -239,7 +241,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	 if (cell == nil) 
 	 {
-		 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
 		 [cell setSelectionStyle: UITableViewCellSelectionStyleNone];
 		 cell.showsReorderControl = YES;
 #ifdef CUSTOM_GRAPHICS
@@ -253,12 +255,18 @@
 
     if ([indexPath section] == 0)
 	{
-		NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+/*		NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	
 		NSString *fromCurrency = [managedObject valueForKey: @"fromCurrency"];
-		NSString *toCurrency = [managedObject valueForKey: @"toCurrency"];
+		NSString *toCurrency = [managedObject valueForKey: @"toCurrency"];*/
+		
+		JSManagedConversion *managedConversion = [fetchedResultsController objectAtIndexPath:indexPath];
 
-		[[cell textLabel] setText: [NSString stringWithFormat: @"%@ <-> %@",fromCurrency,toCurrency]];
+		[[cell textLabel] setText: [NSString stringWithFormat: @"%@ ≠ %@",[managedConversion fromCurrency],[managedConversion toCurrency]]];
+//		[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@",[[managedConversion valueForKey:@"fC"] longTextDescription],[[managedConversion valueForKey:@"tC"] longTextDescription]]];
+		
+		[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@",[[managedConversion fC] longTextDescription],[[managedConversion tC] longTextDescription]]];
+
 	}
 	else
 	{

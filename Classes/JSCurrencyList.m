@@ -155,7 +155,7 @@ static JSCurrencyList *sharedSingleton = nil;
 	
 	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: url]];
 	
-	NSURLConnection *urlConn = [NSURLConnection connectionWithRequest: req delegate: self];
+	[NSURLConnection connectionWithRequest: req delegate: self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

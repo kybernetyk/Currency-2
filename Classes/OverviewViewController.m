@@ -42,7 +42,20 @@
 	
 	//NSLog(@"%@",theTitle) ;
 	[editField setText: theTitle];
+
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+	
+	if ([[editField text] length] <= 0)
+	{
+		NSNumber *num = [defs objectForKey: @"defaultUserInput"];
+		[editField setText: [NSString stringWithFormat: @"%@",num]];
+	}
+	
 	[self updateTableView: self];
+	
+	NSNumber *num = [NSNumber numberWithDouble: [[editField text] doubleValue]];
+	[defs setObject: num forKey: @"lastUserInput"];
+
 }
 
 - (void) updateRates
@@ -57,6 +70,17 @@
 
 #pragma mark -
 #pragma mark view stuff
+- (void) buildBookmarkBar
+{
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	
+	
+	//setup bookmark bar
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark0"]] forSegmentAtIndex: 0];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark1"]] forSegmentAtIndex: 1];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark2"]] forSegmentAtIndex: 2];
+	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark3"]] forSegmentAtIndex: 3];
+	
+}
 
 - (void) showEditView: (id) sender
 {
@@ -133,17 +157,6 @@
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
 }
 
-- (void) buildBookmarkBar
-{
-	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	
-
-	//setup bookmark bar
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark0"]] forSegmentAtIndex: 0];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark1"]] forSegmentAtIndex: 1];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark2"]] forSegmentAtIndex: 2];
-	[bookmarkBar setTitle: [NSString stringWithFormat: @"%@", [defs objectForKey: @"bookmark3"]] forSegmentAtIndex: 3];
-	
-}
 
 - (void) defaultsDidChange: (NSNotification *) aNotification
 {
@@ -276,7 +289,8 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     
     static NSString *CellIdentifier = @"MyIdentifier";
 

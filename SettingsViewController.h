@@ -24,4 +24,6 @@
 	UIButton *dotButton;
 }
 
+- (void) saveBookmarks;
+
 @end

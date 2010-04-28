@@ -18,6 +18,7 @@
 @dynamic timeStamp;
 @dynamic lastUpdated;
 @dynamic sortOrder;
+@dynamic fC,tC;
 
 - (void) remoteUpdate
 {
@@ -56,7 +57,7 @@
 	NSString *url = [NSString stringWithFormat:@"http://download.finance.yahoo.com/d/quotes.csv?s=%@%@=X&f=l1",[self fromCurrency],[self toCurrency]];
 	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: url]];
 	
-	NSURLConnection *urlConn = [NSURLConnection connectionWithRequest: req delegate: self];
+	[NSURLConnection connectionWithRequest: req delegate: self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

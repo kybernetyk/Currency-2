@@ -206,7 +206,7 @@
 			}
 			
 			// Set up the cell...
-			[cell setText: @"Offline Mode"];
+			[[cell textLabel] setText: @"Offline Mode"];
 			return cell;
 		}
 	}
@@ -247,12 +247,12 @@
 		
 		if ([indexPath row] < 4)
 		{	
-			[cell setText: [NSString stringWithFormat: @"Bookmark %i",[indexPath row]+1] ];
+			[[cell textLabel] setText: [NSString stringWithFormat: @"Bookmark %i",[indexPath row]+1] ];
 			[cell setSelectionStyle: UITableViewCellSelectionStyleNone];
 		}
 		else
 		{	
-			[cell setText: @"Restore Defaults"];
+			[[cell textLabel] setText: @"Restore Defaults"];
 			 [cell setSelectionStyle: UITableViewCellSelectionStyleBlue];
 		}
 		
@@ -273,7 +273,7 @@
 //		[cell setAccessoryView:  ];
 	}
     
-	[cell setText: @"Generic Cell"];  
+	[[cell textLabel] setText: @"Generic Cell"];  
     
 	
     return cell;

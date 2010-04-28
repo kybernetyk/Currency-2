@@ -172,7 +172,12 @@
 	[newManagedObject setFromCurrency: [fromCurrency ISOCode]];
 	[newManagedObject setToCurrency: [toCurrency ISOCode]];
 	[newManagedObject setConversionRatio: num];
+
+	[newManagedObject setFC: fromCurrency];
+	[newManagedObject setTC: toCurrency];
 	
+	//[newManagedObject setValue: fromCurrency forKey: @"fC"];
+//	[newManagedObject setValue: toCurrency forKey: @"tC"];
 	
 	NSInteger lastOrder = [[self lastSortOrder] integerValue];
 	lastOrder++;
