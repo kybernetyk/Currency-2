@@ -23,7 +23,7 @@
 {
 	AddCurrencyViewController *acvc = [[AddCurrencyViewController alloc] initWithNibName: @"AddCurrencyViewController" bundle: nil];
 	[[self navigationController] pushViewController: acvc animated: YES];
-	[acvc autorelease];
+	[acvc release];
 	
 	return;
 	

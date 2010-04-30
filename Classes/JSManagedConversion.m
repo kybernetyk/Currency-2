@@ -45,6 +45,7 @@
 	BOOL isOnline = [[[UIApplication sharedApplication] delegate] isOnline];
 	if (!isOnline)
 	{
+		//see above in offlineMode - we trigger here
 		[self setConversionRatio: [self conversionRatio]];
 		NSLog(@"not connected to net. won't update conversion");
 		return;
@@ -63,7 +64,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	isUpdating = NO;
-	NSLog(@"connection did fail ...");
+//	NSLog(@"connection did fail ...");
 	
 	//call our setter so the KVO fetchedResultsController sends a message that
 	//the contents "changed". this will cause our main table to reload and to stop drawing the
@@ -78,7 +79,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-	NSLog(@"connection did receive data ...");
+//	NSLog(@"connection did receive data ...");
 	[tempUpdateData appendData: data];
 
 }
@@ -94,13 +95,10 @@
 	[self setLastUpdated: [NSDate date]];
 	[str release];
 
-	NSLog(@"%@ conv ratio: %@",self, [self conversionRatio]);
+//	NSLog(@"%@ conv ratio: %@",self, [self conversionRatio]);
 	
 	[tempUpdateData release];
 	tempUpdateData = nil;
-	
-	
-
 }
 
 

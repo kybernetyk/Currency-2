@@ -30,8 +30,8 @@
 
 	[super viewDidLoad];
 	
-	[chartImageView setOpaque: NO];
-	[chartImageView setBackgroundColor: [UIColor clearColor]];
+//	[chartImageView setOpaque: NO];
+//	[chartImageView setBackgroundColor: [UIColor clearColor]];
 	[chartImageView setAlpha: 1.0f];
 	[chartImageView setScalesPageToFit: YES];
 //	[chartImageView setDetectsPhoneNumbers: NO];
@@ -39,6 +39,21 @@
 	[chartImageView setDelegate: self];
 	[activityIndicator startAnimating];
 	
+/*	[UIView beginAnimations:@"crazyRotate" context:nil];
+	[UIView setAnimationDuration:1.0];
+	
+	[UIView commitAnimations];*/
+	
+	//chartImageView.transform = CGAffineTransformMakeRotation(1.57079633);
+	
+	CGRect rotFrame = CGRectMake(0.0, 0.0, 370, 320);
+	[chartImageView setFrame: rotFrame];
+
+	CGPoint center = CGPointMake(160.0, 185);
+	[chartImageView setCenter: center];
+	
+	
+	chartImageView.transform = CGAffineTransformMakeRotation(1.57079633);
 //	[self getLastCachedImage];
 }
 
@@ -89,7 +104,6 @@
 - (void)dealloc 
 {
 	NSLog(@"detail view bai!");
-	
 	[self setConversion: nil];
     [super dealloc];
 }
@@ -204,7 +218,7 @@
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath: filename])
 	{
-		NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: white;'><p><center><img src='%@' width=94%%></center></body></html>",filename];
+		NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><center><table width=95%% height=99%% border=0><td valign=center align=center><h1>%@/%@</h1><img src='%@' width=94%%></td></table></center></body></html>",[conversion fromCurrency],[conversion toCurrency],filename];
 		[chartImageView loadHTMLString:s baseURL: [NSURL URLWithString: @"file:///"]];
 		return;
 	}
@@ -223,7 +237,7 @@
 		//	NSLog(@"cache file: %@",filename);
 		if (filename && ![filename isEqualToString:[NSString string]])
 		{	
-			NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><p><center><img src='%@' width=94%%></center></body></html>",filename];
+			NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><center><table width=95%% height=99%% border=0><td valign=center align=center><h1>%@/%@</h1><img src='%@' width=94%%></td></table></center></body></html>",[conversion fromCurrency],[conversion toCurrency],filename];
 			[chartImageView loadHTMLString:s baseURL: [NSURL URLWithString: @"file:///"]];
 			return;
 		}
@@ -256,7 +270,7 @@
 	
 
 	
-	NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><p><center><img src='%@' width=94%%></center></body></html>",filename];
+	NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><center><table width=95%% height=99%% border=0><td valign=center align=center><h1>%@/%@</h1><img src='%@' width=94%%></td></table></center></body></html>",[conversion fromCurrency],[conversion toCurrency],filename];
 	[chartImageView loadHTMLString:s baseURL: [NSURL URLWithString: @"file:///"]];
 	
 }
