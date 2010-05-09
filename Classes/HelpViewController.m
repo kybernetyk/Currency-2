@@ -7,7 +7,7 @@
 //
 
 #import "HelpViewController.h"
-
+#import "HelpDetailViewController.h"
 
 @implementation HelpViewController
 
@@ -156,14 +156,35 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+
+	
+
+	if ([indexPath section] == 0 && [indexPath row] == 0)
+	{
+		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
+		[hdvc setTitle: @"Bookmarks"];
+		[hdvc setHelpText: @"<center><h2>Quick Access Bookmarks</h2></center><p>The quick access bookmarks are found in the green bar on top of the watch list view. Those bookmarks offer you quick access to often used values.</p><center><img src='bookmarks.png'><br><i>Quick Access Bookmarks</i></center><p>You can set your bookmarks in the settings view.</p>"];
+		[[self navigationController] pushViewController: hdvc animated: YES];
+		[hdvc release];
+	}
+
+	if ([indexPath section] == 0 && [indexPath row] == 1)
+	{
+		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
+		[hdvc setTitle: @"Offline Mode"];
+		[hdvc setHelpText: @"<center><h2>Offline Mode</h2></center><p>The offline mode forces Currency 2 to stay offline and don't update any exchange rates - even if there is a network connection available.</p><p>This setting is useful if you know that your network connection is really slow or if internet access is blocked. It also helps to save you on roaming fees when you are abroad.</p>"];
+		[[self navigationController] pushViewController: hdvc animated: YES];
+		[hdvc release];
+		
+	}
+	
 }
-
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

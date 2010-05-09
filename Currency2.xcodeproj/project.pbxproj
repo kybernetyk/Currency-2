@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033782A5119709CF00FA3744 /* HelpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033782A3119709CF00FA3744 /* HelpDetailViewController.m */; };
+		033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033782A4119709CF00FA3744 /* HelpDetailViewController.xib */; };
+		033782D81197104C00FA3744 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 033782D71197104C00FA3744 /* bookmarks.png */; };
+		03378316119712FC00FA3744 /* currency2help.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03378315119712FC00FA3744 /* currency2help.txt */; };
 		0378E0D711732FCE00C783F5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E0D511732FCE00C783F5 /* OverviewViewController.m */; };
 		0378E0D811732FCE00C783F5 /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E0D611732FCE00C783F5 /* OverviewViewController.xib */; };
 		0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378E1151173307C00C783F5 /* CoreData.framework */; };
@@ -56,6 +60,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		033782A2119709CF00FA3744 /* HelpDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDetailViewController.h; sourceTree = "<group>"; };
+		033782A3119709CF00FA3744 /* HelpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDetailViewController.m; sourceTree = "<group>"; };
+		033782A4119709CF00FA3744 /* HelpDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpDetailViewController.xib; path = Classes/HelpDetailViewController.xib; sourceTree = "<group>"; };
+		033782D71197104C00FA3744 /* bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmarks.png; sourceTree = "<group>"; };
+		03378315119712FC00FA3744 /* currency2help.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = currency2help.txt; sourceTree = "<group>"; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		0378E0D611732FCE00C783F5 /* OverviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OverviewViewController.xib; path = Classes/OverviewViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +167,8 @@
 				03DFC74A117C3C730031EF67 /* SettingsViewController.m */,
 				03DFC9601181C13D0031EF67 /* HelpViewController.h */,
 				03DFC9611181C13D0031EF67 /* HelpViewController.m */,
+				033782A2119709CF00FA3744 /* HelpDetailViewController.h */,
+				033782A3119709CF00FA3744 /* HelpDetailViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -200,6 +211,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03378315119712FC00FA3744 /* currency2help.txt */,
+				033782D71197104C00FA3744 /* bookmarks.png */,
+				033782A4119709CF00FA3744 /* HelpDetailViewController.xib */,
 				03DFC9621181C13D0031EF67 /* HelpViewController.xib */,
 				03DFC74B117C3C730031EF67 /* SettingsViewController.xib */,
 				03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */,
@@ -287,6 +301,9 @@
 				03F514CE1175C7C8009C0722 /* ConversionDetailViewController.xib in Resources */,
 				03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */,
 				03DFC9641181C13D0031EF67 /* HelpViewController.xib in Resources */,
+				033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */,
+				033782D81197104C00FA3744 /* bookmarks.png in Resources */,
+				03378316119712FC00FA3744 /* currency2help.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +330,7 @@
 				03F5A72E117899290067E642 /* Reachability.m in Sources */,
 				03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */,
 				03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */,
+				033782A5119709CF00FA3744 /* HelpDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
