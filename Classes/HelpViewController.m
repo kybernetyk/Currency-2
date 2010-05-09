@@ -8,6 +8,7 @@
 
 #import "HelpViewController.h"
 #import "HelpDetailViewController.h"
+#import "MissingCurrencyViewController.h"
 
 @implementation HelpViewController
 
@@ -111,7 +112,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
 	if (section == 0)
-		return 2;
+		return 3;
 	
 	if (section == 1)
 		return 1;
@@ -136,11 +137,14 @@
     }
 
 	[cell setAccessoryType: UITableViewCellAccessoryDisclosureIndicator];
-	
+
 	if ([indexPath section] == 0 && [indexPath row] == 0)
-		[[cell textLabel] setText: @"Quick Access Bookmarks"];
+		[[cell textLabel] setText: @"How to manage the watchlist"];
 
 	if ([indexPath section] == 0 && [indexPath row] == 1)
+		[[cell textLabel] setText: @"Quick Access Bookmarks"];
+
+	if ([indexPath section] == 0 && [indexPath row] == 2)
 		[[cell textLabel] setText: @"Offline Mode"];
     
     // Set up the cell...
@@ -163,18 +167,26 @@
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
 
-	
-
 	if ([indexPath section] == 0 && [indexPath row] == 0)
 	{
 		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
-		[hdvc setTitle: @"Bookmarks"];
-		[hdvc setHelpText: @"<center><h2>Quick Access Bookmarks</h2></center><p>The quick access bookmarks are found in the green bar on top of the watch list view. Those bookmarks offer you quick access to often used values.</p><center><img src='bookmarks.png'><br><i>Quick Access Bookmarks</i></center><p>You can set your bookmarks in the settings view.</p>"];
+		[hdvc setTitle: @"Managing the Watchlist"];
+		[hdvc setHelpText: @"<center><h2>Managing the Watchlist</h2></center><p>To enter the managment mode of your watchlist press the 'Edit' button in the top right corner of the watchlist view.</p><p>To add a new item to your watchlist press the '+' button. In the following view choose the pair of currencies you'd like to watch.</p><p>To delete an item from your watchlist press the delete control on the item's left side and confirm with a press on the appearing 'Delete' button.</p><p>You can also change the order of the items in your watchlist. Just drag them around by touching the drag control on the item's right side.</p>"];
+		[[self navigationController] pushViewController: hdvc animated: YES];
+		[hdvc release];
+	}
+	
+
+	if ([indexPath section] == 0 && [indexPath row] == 1)
+	{
+		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
+		[hdvc setTitle: @"Quick Access Bookmarks"];
+		[hdvc setHelpText: @"<center><h2>Quick Access Bookmarks</h2></center><p>The quick access bookmarks are found in the green bar on top of the watchlist view. Those bookmarks offer you quick access to often used values.</p><center><img src='bookmarks.png'><br><i>Quick Access Bookmarks</i></center><p>You can change your bookmarks in the settings view.</p>"];
 		[[self navigationController] pushViewController: hdvc animated: YES];
 		[hdvc release];
 	}
 
-	if ([indexPath section] == 0 && [indexPath row] == 1)
+	if ([indexPath section] == 0 && [indexPath row] == 2)
 	{
 		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
 		[hdvc setTitle: @"Offline Mode"];
@@ -183,6 +195,28 @@
 		[hdvc release];
 		
 	}
+
+	if ([indexPath section] == 1 && [indexPath row] == 0)
+	{
+		MissingCurrencyViewController *mcvc = [[MissingCurrencyViewController alloc] initWithNibName: @"MissingCurrencyViewController" bundle:nil];
+		
+		[mcvc setTitle: @"Suggest Currency"];
+		[[self navigationController] pushViewController: mcvc animated: YES];
+		[mcvc release];
+		
+	}
+	
+	
+	if ([indexPath section] == 2 && [indexPath row] == 0)
+	{
+		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
+		[hdvc setTitle: @"Contact Us"];
+		[hdvc setHelpText: @"<center><h2>Contact Us</h2></center><p>Should you experience any issues or problems with Currency 2 don't hesitate to <a href='mailto:support@fluxforge.com?Subject=Currency+2+Support'>send us a mail</a>!</p><p>We will be glad to hear your suggestions and feature requests to improve our apps!"];
+		[[self navigationController] pushViewController: hdvc animated: YES];
+		[hdvc release];
+		
+	}
+	
 	
 }
 /*
@@ -225,7 +259,9 @@
 */
 
 
-- (void)dealloc {
+- (void)dealloc 
+{
+	
     [super dealloc];
 }
 

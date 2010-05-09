@@ -66,7 +66,10 @@
 }
 
 
-- (void)dealloc {
+- (void)dealloc 
+{
+	[helpText release];
+	helpText = nil;
     [super dealloc];
 }
 

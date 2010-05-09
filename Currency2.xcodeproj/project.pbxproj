@@ -11,6 +11,9 @@
 		033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033782A4119709CF00FA3744 /* HelpDetailViewController.xib */; };
 		033782D81197104C00FA3744 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 033782D71197104C00FA3744 /* bookmarks.png */; };
 		03378316119712FC00FA3744 /* currency2help.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03378315119712FC00FA3744 /* currency2help.txt */; };
+		0337832D1197156B00FA3744 /* MissingCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */; };
+		0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */; };
+		0337835D1197193200FA3744 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0337835C1197193200FA3744 /* MessageUI.framework */; };
 		0378E0D711732FCE00C783F5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E0D511732FCE00C783F5 /* OverviewViewController.m */; };
 		0378E0D811732FCE00C783F5 /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E0D611732FCE00C783F5 /* OverviewViewController.xib */; };
 		0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378E1151173307C00C783F5 /* CoreData.framework */; };
@@ -65,6 +68,10 @@
 		033782A4119709CF00FA3744 /* HelpDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpDetailViewController.xib; path = Classes/HelpDetailViewController.xib; sourceTree = "<group>"; };
 		033782D71197104C00FA3744 /* bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmarks.png; sourceTree = "<group>"; };
 		03378315119712FC00FA3744 /* currency2help.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = currency2help.txt; sourceTree = "<group>"; };
+		0337832A1197156B00FA3744 /* MissingCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissingCurrencyViewController.h; sourceTree = "<group>"; };
+		0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissingCurrencyViewController.m; sourceTree = "<group>"; };
+		0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MissingCurrencyViewController.xib; path = Classes/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
+		0337835C1197193200FA3744 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		0378E0D611732FCE00C783F5 /* OverviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OverviewViewController.xib; path = Classes/OverviewViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +135,7 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */,
 				03F5A75111789B980067E642 /* SystemConfiguration.framework in Frameworks */,
+				0337835D1197193200FA3744 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +177,8 @@
 				03DFC9611181C13D0031EF67 /* HelpViewController.m */,
 				033782A2119709CF00FA3744 /* HelpDetailViewController.h */,
 				033782A3119709CF00FA3744 /* HelpDetailViewController.m */,
+				0337832A1197156B00FA3744 /* MissingCurrencyViewController.h */,
+				0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */,
 				03378315119712FC00FA3744 /* currency2help.txt */,
 				033782D71197104C00FA3744 /* bookmarks.png */,
 				033782A4119709CF00FA3744 /* HelpDetailViewController.xib */,
@@ -241,6 +252,7 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				0378E1151173307C00C783F5 /* CoreData.framework */,
 				03F5A75011789B980067E642 /* SystemConfiguration.framework */,
+				0337835C1197193200FA3744 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,6 +316,7 @@
 				033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */,
 				033782D81197104C00FA3744 /* bookmarks.png in Resources */,
 				03378316119712FC00FA3744 /* currency2help.txt in Resources */,
+				0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +344,7 @@
 				03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */,
 				03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */,
 				033782A5119709CF00FA3744 /* HelpDetailViewController.m in Sources */,
+				0337832D1197156B00FA3744 /* MissingCurrencyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
