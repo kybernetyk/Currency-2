@@ -14,6 +14,13 @@
 		0337832D1197156B00FA3744 /* MissingCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */; };
 		0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */; };
 		0337835D1197193200FA3744 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0337835C1197193200FA3744 /* MessageUI.framework */; };
+		033783EA119722C200FA3744 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783E9119722C200FA3744 /* 20-gear2.png */; };
+		033783EC1197232900FA3744 /* 12-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783EB1197232900FA3744 /* 12-eye.png */; };
+		033783EE1197234400FA3744 /* 16-line-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783ED1197234400FA3744 /* 16-line-chart.png */; };
+		033783F01197236900FA3744 /* 26-bandaid.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783EF1197236900FA3744 /* 26-bandaid.png */; };
+		033783F21197239500FA3744 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F11197239500FA3744 /* 79-medical-bag.png */; };
+		033783F4119723A700FA3744 /* 84-lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F3119723A700FA3744 /* 84-lightbulb.png */; };
+		033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F5119723B600FA3744 /* 90-lifebuoy.png */; };
 		0378E0D711732FCE00C783F5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E0D511732FCE00C783F5 /* OverviewViewController.m */; };
 		0378E0D811732FCE00C783F5 /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E0D611732FCE00C783F5 /* OverviewViewController.xib */; };
 		0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378E1151173307C00C783F5 /* CoreData.framework */; };
@@ -72,6 +79,13 @@
 		0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissingCurrencyViewController.m; sourceTree = "<group>"; };
 		0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MissingCurrencyViewController.xib; path = Classes/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
 		0337835C1197193200FA3744 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		033783E9119722C200FA3744 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		033783EB1197232900FA3744 /* 12-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12-eye.png"; sourceTree = "<group>"; };
+		033783ED1197234400FA3744 /* 16-line-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart.png"; sourceTree = "<group>"; };
+		033783EF1197236900FA3744 /* 26-bandaid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "26-bandaid.png"; sourceTree = "<group>"; };
+		033783F11197239500FA3744 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
+		033783F3119723A700FA3744 /* 84-lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "84-lightbulb.png"; sourceTree = "<group>"; };
+		033783F5119723B600FA3744 /* 90-lifebuoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-lifebuoy.png"; sourceTree = "<group>"; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		0378E0D611732FCE00C783F5 /* OverviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OverviewViewController.xib; path = Classes/OverviewViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +235,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				033783F5119723B600FA3744 /* 90-lifebuoy.png */,
+				033783F3119723A700FA3744 /* 84-lightbulb.png */,
+				033783F11197239500FA3744 /* 79-medical-bag.png */,
+				033783EF1197236900FA3744 /* 26-bandaid.png */,
+				033783ED1197234400FA3744 /* 16-line-chart.png */,
+				033783EB1197232900FA3744 /* 12-eye.png */,
+				033783E9119722C200FA3744 /* 20-gear2.png */,
 				0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */,
 				03378315119712FC00FA3744 /* currency2help.txt */,
 				033782D71197104C00FA3744 /* bookmarks.png */,
@@ -317,6 +338,13 @@
 				033782D81197104C00FA3744 /* bookmarks.png in Resources */,
 				03378316119712FC00FA3744 /* currency2help.txt in Resources */,
 				0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */,
+				033783EA119722C200FA3744 /* 20-gear2.png in Resources */,
+				033783EC1197232900FA3744 /* 12-eye.png in Resources */,
+				033783EE1197234400FA3744 /* 16-line-chart.png in Resources */,
+				033783F01197236900FA3744 /* 26-bandaid.png in Resources */,
+				033783F21197239500FA3744 /* 79-medical-bag.png in Resources */,
+				033783F4119723A700FA3744 /* 84-lightbulb.png in Resources */,
+				033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
