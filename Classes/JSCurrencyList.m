@@ -191,7 +191,7 @@ static JSCurrencyList *sharedSingleton = nil;
 - (void) updateStoredListWithJSON: (NSString *) jsonString
 {
 	
-	SBJSON *json = [[SBJSON alloc] init];
+	SBJSON *json = [[[SBJSON alloc] init] autorelease];
 	
 	NSArray *listArray = [json objectWithString: jsonString];
 	
