@@ -261,7 +261,7 @@ static JSCurrencyList *sharedSingleton = nil;
 	
 }
 
-//creates a dummy dataset
+//creates a dummy dataset (in case we have no network)
 - (void) createDummyDataSet
 {
 	NSLog(@"creating dummy data set ...");

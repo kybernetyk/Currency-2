@@ -32,7 +32,7 @@
 	
 //	[chartImageView setOpaque: NO];
 //	[chartImageView setBackgroundColor: [UIColor clearColor]];
-	[chartImageView setAlpha: 1.0f];
+	//[chartImageView setAlpha: 1.0f];
 	[chartImageView setScalesPageToFit: YES];
 //	[chartImageView setDetectsPhoneNumbers: NO];
 	[chartImageView setDataDetectorTypes: UIDataDetectorTypeNone];
