@@ -311,21 +311,16 @@
 //		[fromLabel setText: [fromCurrency valueForKey: @"longTextDescription"]];
 		
 //		NSLog(@"from: %@",fromCurrency);
-
 		JSManagedCurrency *fromCurrency = [[[self fetchedResultsController] fetchedObjects] objectAtIndex: row ];
-		[fromLabel setText: [fromCurrency longTextDescription]];
+		[fromLabel setText: [fromCurrency localizedName]];
 		
 	}
 
 	 if (component == 1)
 	 {
-//		 NSManagedObject *toCurrency = [[[RemoteDataStore sharedInstance] availableCurrencyList] objectAtIndex: row];
-//		 [toLabel setText: [toCurrency valueForKey: @"longTextDescription"]];
-
 		 JSManagedCurrency *toCurrency = [[[self fetchedResultsController] fetchedObjects] objectAtIndex: row ];
-		 [toLabel setText: [toCurrency longTextDescription]];
+		 [toLabel setText: [toCurrency localizedName]];
 
-		 
 	 }
 			  
 		

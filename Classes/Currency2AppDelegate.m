@@ -43,6 +43,11 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
+	NSString *loc = [[NSLocale preferredLanguages] objectAtIndex: 0];
+	NSLog(@"current locale: %@", loc);
+	
+	NSLog(@"pref languages: %@", [NSLocale preferredLanguages]);
+	
 	[self registerUserDefaults];
 	[self setIsOnline: NO];
 	

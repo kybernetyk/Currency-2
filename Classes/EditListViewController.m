@@ -264,8 +264,15 @@
 
 		[[cell textLabel] setText: [NSString stringWithFormat: @"%@ ≠ %@",[managedConversion fromCurrency],[managedConversion toCurrency]]];
 //		[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@",[[managedConversion valueForKey:@"fC"] longTextDescription],[[managedConversion valueForKey:@"tC"] longTextDescription]]];
+
+//		NSString *loc = [[NSLocale preferredLanguages] objectAtIndex: 0];
 		
-		[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@",[[managedConversion fC] longTextDescription],[[managedConversion tC] longTextDescription]]];
+		NSString *fromLocalizedName = [[managedConversion fC] localizedName];
+		NSString *toLocalizedName = [[managedConversion tC] localizedName];
+
+		[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@", fromLocalizedName, toLocalizedName]];
+		
+	/*	[[cell detailTextLabel] setText: [NSString stringWithFormat: @"%@ to %@",[[managedConversion fC] longTextDescription],[[managedConversion tC] longTextDescription]]];*/
 
 	}
 	else

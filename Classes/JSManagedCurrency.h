@@ -15,6 +15,8 @@
 }
 
 @property (retain) NSString *ISOCode;
-@property (retain) NSString *longTextDescription;
+@property (retain) NSDictionary *localizedNames;
+
+- (NSString *) localizedName;
 
 @end

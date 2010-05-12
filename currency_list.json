@@ -1,0 +1,44 @@
+[
+
+{
+	"ISOCode" : "EUR",
+	"localizedNames" :
+	{
+		"en" : "Euro",
+		"de" : "Euro"
+	}
+},
+{
+	"ISOCode" : "GBP",
+	"localizedNames" :
+	{
+		"en" : "British Pound",
+		"de" : "Britisches Pfund"
+	}
+},
+{
+	"ISOCode" : "PLN",
+	"localizedNames" :
+	{
+		"en" : "Polnish Zloty",
+		"de" : "Polnischer Zloty"
+	}
+},
+{
+	"ISOCode" : "USD",
+	"localizedNames" :
+	{
+		"en" : "US Dollar",
+		"de" : "US-Dollar"
+	}
+},
+{
+	"ISOCode" : "JPY",
+	"localizedNames" :
+	{
+		"en" : "Japanese Yen",
+		"de" : "Japanischer Yen"
+	}
+}
+
+]

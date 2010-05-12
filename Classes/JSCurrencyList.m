@@ -7,7 +7,7 @@
 //
 
 #import "JSCurrencyList.h"
-
+#import "JSON.h"
 
 @implementation JSCurrencyList
 static JSCurrencyList *sharedSingleton = nil;
@@ -151,7 +151,8 @@ static JSCurrencyList *sharedSingleton = nil;
 	
 	tempUpdateData = [[NSMutableData alloc] initWithLength: 0];
 	
-	NSString *url = @"http://www.fluxforge.com/services/english_currency_list.txt";
+	//NSString *url = @"http://www.fluxforge.com/services/english_currency_list.txt";
+	NSString *url = @"http://www.fluxforge.com/services/currency_list.json";
 	
 	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: url]];
 	
@@ -179,11 +180,26 @@ static JSCurrencyList *sharedSingleton = nil;
 	NSLog(@"connection did finish!");
 	NSString *theList =  [[NSString alloc] initWithData: tempUpdateData encoding: NSUTF8StringEncoding];
 	
+	[self updateStoredListWithJSON: theList];
+	
+	[theList release];
+	[tempUpdateData release];
+	tempUpdateData = nil;
+	isUpdating = NO;
+}
+
+- (void) updateStoredListWithJSON: (NSString *) jsonString
+{
+	
+	SBJSON *json = [[SBJSON alloc] init];
+	
+	NSArray *listArray = [json objectWithString: jsonString];
+	
+	//	NSLog(@"list array: %@", listArray);
+	
+	
 	JSDataCore *dataCore = [JSDataCore sharedInstance];
 	NSFetchedResultsController *currencyListController = [JSCurrencyList currencyListController];
-	
-	
-	NSArray *arr = [theList componentsSeparatedByString:@","];
 	
 	NSError *err;
 	if (![currencyListController performFetch: &err])
@@ -191,20 +207,19 @@ static JSCurrencyList *sharedSingleton = nil;
 		NSLog(@"updateAvailableCurrencyList err: %@",[err localizedDescription]);
 		abort();
 	}
-	
 	NSLog(@"%@",[currencyListController fetchedObjects]);
 	
-	BOOL shouldAdd = YES;
-	for (int i = 0; i < [arr count]; i+= 2)
+	BOOL shouldAdd = YES;	
+	for (NSDictionary *currentEntry in listArray)
 	{
-		shouldAdd = YES;
-		NSString *isoCode = [arr objectAtIndex: i];
-		NSString *description = [arr objectAtIndex: i+1];
+		shouldAdd = YES;		
 		
-		//check if this iso code is already found in our list
+		NSString *isoCode = [currentEntry objectForKey: @"ISOCode"];
+		if (!isoCode)
+			continue;
+		
 		for (JSManagedCurrency *curr in [currencyListController fetchedObjects])
 		{
-			//if ([[curr valueForKey: @"ISOCode"] isEqualToString: isoCode])
 			if ([[curr ISOCode] isEqualToString: isoCode])
 			{
 				shouldAdd = NO;
@@ -213,18 +228,21 @@ static JSCurrencyList *sharedSingleton = nil;
 		
 		if (shouldAdd)
 		{
+			NSDictionary *localizations = [currentEntry objectForKey: @"localizedNames"];
+			if (!localizations)
+				continue;
+			
 			JSManagedCurrency *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext: [dataCore managedObjectContext]];
 			
 			[newManagedObject setISOCode: isoCode];
-			[newManagedObject setLongTextDescription: description];
 			
-			NSLog(@"adding %@ / %@ ...",isoCode, description);
+			NSDictionary *localizedNames = [NSDictionary dictionaryWithDictionary: localizations];
+			[newManagedObject setLocalizedNames: localizedNames];
+			
+			NSLog(@"adding %@ / %@ ...",isoCode, localizedNames);
 			
 		}
 	}
-	
-	
-	
 	
 	// Save the context.
     NSError *error = nil;
@@ -240,74 +258,16 @@ static JSCurrencyList *sharedSingleton = nil;
 	[defs setObject: [NSDate date] forKey: @"lastListUpdate"];
 	
 	
-	[theList release];
-	[tempUpdateData release];
-	tempUpdateData = nil;
-	isUpdating = NO;
+	
 }
 
 //creates a dummy dataset
 - (void) createDummyDataSet
 {
-	JSDataCore *dataCore = [JSDataCore sharedInstance];
-	NSFetchedResultsController *currencyListController = [JSCurrencyList currencyListController];
+	NSLog(@"creating dummy data set ...");
 	
-	NSString *theList = @"EUR,Euro,GBP,British Pound,PLN,Polish Zloty,USD,US Dollar";
-	
-	NSArray *arr = [theList componentsSeparatedByString:@","];
-	
-	NSError *err;
-	if (![currencyListController performFetch: &err])
-	{
-		NSLog(@"updateAvailableCurrencyList err: %@",[err localizedDescription]);
-		abort();
-	}
-	
-	NSLog(@"%@",[currencyListController fetchedObjects]);
-	
-	BOOL shouldAdd = YES;
-	for (int i = 0; i < [arr count]; i+= 2)
-	{
-		shouldAdd = YES;
-		NSString *isoCode = [arr objectAtIndex: i];
-		NSString *description = [arr objectAtIndex: i+1];
-		
-		//check if this iso code is already found in our list
-		for (JSManagedCurrency *curr in [currencyListController fetchedObjects])
-		{
-			//if ([[curr valueForKey: @"ISOCode"] isEqualToString: isoCode])
-			if ([[curr ISOCode] isEqualToString: isoCode])
-			{
-				shouldAdd = NO;
-			}
-		}
-		
-		if (shouldAdd)
-		{
-			JSManagedCurrency *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext: [dataCore managedObjectContext]];
-			
-			[newManagedObject setISOCode: isoCode];
-			[newManagedObject setLongTextDescription: description];
-			
-			NSLog(@"adding %@ / %@ ...",isoCode, description);
-			
-		}
-	}
-	
-	
-	
-	
-	// Save the context.
-    NSError *error = nil;
-    if (![[dataCore managedObjectContext] save:&error]) 
-	{
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-    }
-	
-	[theList release];
-
-	
+	NSString *json = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"currency_list" ofType: @"json"]];
+	[self updateStoredListWithJSON: json];
 }
 
 
