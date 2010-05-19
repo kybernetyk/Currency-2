@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0334609E11A40C990015E835 /* chartslol in Resources */ = {isa = PBXBuildFile; fileRef = 0334609D11A40C990015E835 /* chartslol */; };
 		033782A5119709CF00FA3744 /* HelpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033782A3119709CF00FA3744 /* HelpDetailViewController.m */; };
 		033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033782A4119709CF00FA3744 /* HelpDetailViewController.xib */; };
 		033782D81197104C00FA3744 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 033782D71197104C00FA3744 /* bookmarks.png */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0334609D11A40C990015E835 /* chartslol */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chartslol; sourceTree = "<group>"; };
 		033782A2119709CF00FA3744 /* HelpDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDetailViewController.h; sourceTree = "<group>"; };
 		033782A3119709CF00FA3744 /* HelpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDetailViewController.m; sourceTree = "<group>"; };
 		033782A4119709CF00FA3744 /* HelpDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpDetailViewController.xib; path = Classes/HelpDetailViewController.xib; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				0378E1AE11733EA500C783F5 /* NSString+Additions.m */,
 				28A0AB4B0D9B1048005BE974 /* Currency2_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				0334609D11A40C990015E835 /* chartslol */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				033783F4119723A700FA3744 /* 84-lightbulb.png in Resources */,
 				033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */,
 				03F9F864119B194D000CA35E /* currency_list.json in Resources */,
+				0334609E11A40C990015E835 /* chartslol in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

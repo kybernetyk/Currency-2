@@ -1,0 +1,541 @@
+[
+  {
+    "ISOCode" : "AED",
+    "localizedNames" : {
+      "de" : "VAE-Dirham",
+      "en" : "United Arab Emirates Dirham"
+    }
+  },
+  {
+    "ISOCode" : "ARS",
+    "localizedNames" : {
+      "de" : "Argentinischer Peso",
+      "en" : "Argentine Peso"
+    }
+  },
+  {
+    "ISOCode" : "AUD",
+    "localizedNames" : {
+      "de" : "Australischer Dollar",
+      "en" : "Australian Dollar"
+    }
+  },
+  {
+    "ISOCode" : "AWG",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Aruban Florin"
+    }
+  },
+  {
+    "ISOCode" : "BBD",
+    "localizedNames" : {
+      "de" : "Barbados Dollar",
+      "en" : "Barbados Dollar"
+    }
+  },
+  {
+    "ISOCode" : "BDT",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Bangladeshi Taka"
+    }
+  },
+  {
+    "ISOCode" : "BGN",
+    "localizedNames" : {
+      "de" : "Bulgarischer Lev",
+      "en" : "Bulgarian Lev"
+    }
+  },
+  {
+    "ISOCode" : "BHD",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Bahraini Dinar"
+    }
+  },
+  {
+    "ISOCode" : "BMD",
+    "localizedNames" : {
+      "de" : "Bermuda Dollar",
+      "en" : "Bermuda Dollar"
+    }
+  },
+  {
+    "ISOCode" : "BND",
+    "localizedNames" : {
+      "de" : "Brunei Dollar",
+      "en" : "Brunei Dollar"
+    }
+  },
+  {
+    "ISOCode" : "BRL",
+    "localizedNames" : {
+      "de" : "Brazilianischer Real",
+      "en" : "Brazilian Real"
+    }
+  },
+  {
+    "ISOCode" : "BZD",
+    "localizedNames" : {
+      "de" : "Belize Dollar",
+      "en" : "Belize Dollar"
+    }
+  },
+  {
+    "ISOCode" : "CAD",
+    "localizedNames" : {
+      "de" : "Kanadischer Dollar",
+      "en" : "Canadian Dollar"
+    }
+  },
+  {
+    "ISOCode" : "CHF",
+    "localizedNames" : {
+      "de" : "Schweizer Frank",
+      "en" : "Swiss Frank"
+    }
+  },
+  {
+    "ISOCode" : "CLP",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Chilean Peso"
+    }
+  },
+  {
+    "ISOCode" : "CNY",
+    "localizedNames" : {
+      "de" : "Chinesischer Yuan",
+      "en" : "Chinese Yuan/Renminbi"
+    }
+  },
+  {
+    "ISOCode" : "COP",
+    "localizedNames" : {
+      "de" : "Kolumbianischer Peso",
+      "en" : "Colombian Peso"
+    }
+  },
+  {
+    "ISOCode" : "CRC",
+    "localizedNames" : {
+      "de" : "Costa Rica Colon",
+      "en" : "Costa Rican Colon"
+    }
+  },
+  {
+    "ISOCode" : "CUP",
+    "localizedNames" : {
+      "de" : "Kubanischer Peso",
+      "en" : "Cuban Peso"
+    }
+  },
+  {
+    "ISOCode" : "CZK",
+    "localizedNames" : {
+      "de" : "Tschechische Krone",
+      "en" : "Czech Koruna"
+    }
+  },
+  {
+    "ISOCode" : "DKK",
+    "localizedNames" : {
+      "de" : "Dänische Krone",
+      "en" : "Danish Krone"
+    }
+  },
+  {
+    "ISOCode" : "DOP",
+    "localizedNames" : {
+      "de" : "Domenikanischer Peso",
+      "en" : "Dominican Peso"
+    }
+  },
+  {
+    "ISOCode" : "EEK",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Estonian Kroon"
+    }
+  },
+  {
+    "ISOCode" : "EGP",
+    "localizedNames" : {
+      "de" : "Ägyptisches Pfund",
+      "en" : "Egyptian Pound"
+    }
+  },
+  {
+    "ISOCode" : "EUR",
+    "localizedNames" : {
+      "de" : "Euro",
+      "en" : "Euro"
+    }
+  },
+  {
+    "ISOCode" : "FJD",
+    "localizedNames" : {
+      "de" : "Fidschi Dollar",
+      "en" : "Fidschi Dollar"
+    }
+  },
+  {
+    "ISOCode" : "GBP",
+    "localizedNames" : {
+      "de" : "Britisches Pfund",
+      "en" : "British Pound"
+    }
+  },
+  {
+    "ISOCode" : "GTQ",
+    "localizedNames" : {
+      "de" : "Guatemalischer Quetzal",
+      "en" : "Guatemalan Quetzal"
+    }
+  },
+  {
+    "ISOCode" : "HKD",
+    "localizedNames" : {
+      "de" : "Hong Kong Dollar",
+      "en" : "Hong Kong Dollar"
+    }
+  },
+  {
+    "ISOCode" : "HTG",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Haitian Gourde"
+    }
+  },
+  {
+    "ISOCode" : "HUF",
+    "localizedNames" : {
+      "de" : "Ungarischer Forint",
+      "en" : "Hungarian Forint"
+    }
+  },
+  {
+    "ISOCode" : "IDR",
+    "localizedNames" : {
+      "de" : "Indonesische Rupie",
+      "en" : "Indonesian Rupiah"
+    }
+  },
+  {
+    "ISOCode" : "ILS",
+    "localizedNames" : {
+      "de" : "Israelischer Schekel",
+      "en" : "Israeli Shekel"
+    }
+  },
+  {
+    "ISOCode" : "INR",
+    "localizedNames" : {
+      "de" : "Indische Rupie",
+      "en" : "Indian Rupee"
+    }
+  },
+  {
+    "ISOCode" : "IQD",
+    "localizedNames" : {
+      "de" : "Irakischer Dinar",
+      "en" : "Iraqi Dinar"
+    }
+  },
+  {
+    "ISOCode" : "IRR",
+    "localizedNames" : {
+      "de" : "Iranischer Rial",
+      "en" : "Iran Rial"
+    }
+  },
+  {
+    "ISOCode" : "ISK",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Icelandic Krona"
+    }
+  },
+  {
+    "ISOCode" : "JMD",
+    "localizedNames" : {
+      "de" : "Jamaikanischer Dollar",
+      "en" : "Jamaican Dollar"
+    }
+  },
+  {
+    "ISOCode" : "JPY",
+    "localizedNames" : {
+      "de" : "Japanischer Yen",
+      "en" : "Japanese Yen"
+    }
+  },
+  {
+    "ISOCode" : "KES",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Kenyan Shilling"
+    }
+  },
+  {
+    "ISOCode" : "KRW",
+    "localizedNames" : {
+      "de" : "Süd-Koreanischer Won",
+      "en" : "South Korean Won"
+    }
+  },
+  {
+    "ISOCode" : "KWD",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Kuwaiti Dinar"
+    }
+  },
+  {
+    "ISOCode" : "KYD",
+    "localizedNames" : {
+      "de" : "Cayman Islands Dollar",
+      "en" : "Cayman Islands Dollar"
+    }
+  },
+  {
+    "ISOCode" : "LVL",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Latvian Lats"
+    }
+  },
+  {
+    "ISOCode" : "MAD",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Moroccan Dirham"
+    }
+  },
+  {
+    "ISOCode" : "MDL",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Moldovan Leu"
+    }
+  },
+  {
+    "ISOCode" : "MXN",
+    "localizedNames" : {
+      "de" : "Mexikanischer Peso",
+      "en" : "Mexican Peso"
+    }
+  },
+  {
+    "ISOCode" : "MYR",
+    "localizedNames" : {
+      "de" : "Malaysischer Ringgit",
+      "en" : "Malaysian Ringgit"
+    }
+  },
+  {
+    "ISOCode" : "NOK",
+    "localizedNames" : {
+      "de" : "Norwegische Krone",
+      "en" : "Norwegian Krone"
+    }
+  },
+  {
+    "ISOCode" : "NPR",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Nepalese Rupee"
+    }
+  },
+  {
+    "ISOCode" : "NZD",
+    "localizedNames" : {
+      "de" : "Neu Seeland Dollar",
+      "en" : "New Zealand Dollar"
+    }
+  },
+  {
+    "ISOCode" : "PEN",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Peruvian Nuevo Sol"
+    }
+  },
+  {
+    "ISOCode" : "PHP",
+    "localizedNames" : {
+      "de" : "Philippinischer Peso",
+      "en" : "Philippine Peso"
+    }
+  },
+  {
+    "ISOCode" : "PKR",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Pakistani Rupee"
+    }
+  },
+  {
+    "ISOCode" : "PLN",
+    "localizedNames" : {
+      "de" : "Polnischer Zloty",
+      "en" : "Polish Zloty"
+    }
+  },
+  {
+    "ISOCode" : "PYG",
+    "localizedNames" : {
+      "de" : "Paraguayanische Guarani",
+      "en" : "Paraguayan Guarani"
+    }
+  },
+  {
+    "ISOCode" : "RON",
+    "localizedNames" : {
+      "de" : "Rumänischer Lei",
+      "en" : "Romanian Lei"
+    }
+  },
+  {
+    "ISOCode" : "RSD",
+    "localizedNames" : {
+      "de" : "Serbischer Dinar",
+      "en" : "Serbian Dinar"
+    }
+  },
+  {
+    "ISOCode" : "RUB",
+    "localizedNames" : {
+      "de" : "Russischer Rubel",
+      "en" : "Russian Ruble"
+    }
+  },
+  {
+    "ISOCode" : "SAR",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Saudi Arabian Riyal"
+    }
+  },
+  {
+    "ISOCode" : "SEK",
+    "localizedNames" : {
+      "de" : "Schwedische Krone",
+      "en" : "Swedish Krona"
+    }
+  },
+  {
+    "ISOCode" : "SGD",
+    "localizedNames" : {
+      "de" : "Singapur Dollar",
+      "en" : "Singapore Dollar"
+    }
+  },
+  {
+    "ISOCode" : "SKK",
+    "localizedNames" : {
+      "de" : "Slowakische Krone",
+      "en" : "Slovak Koruna"
+    }
+  },
+  {
+    "ISOCode" : "THB",
+    "localizedNames" : {
+      "de" : "Thai Bath",
+      "en" : "Thai Bath"
+    }
+  },
+  {
+    "ISOCode" : "TND",
+    "localizedNames" : {
+      "de" : "Tunesicher Dinar",
+      "en" : "Tunisian Dinar"
+    }
+  },
+  {
+    "ISOCode" : "TRY",
+    "localizedNames" : {
+      "de" : "Türkische Lira",
+      "en" : "Turkish Lira"
+    }
+  },
+  {
+    "ISOCode" : "TTD",
+    "localizedNames" : {
+      "de" : "Trinidad Dollar",
+      "en" : "Trinidad Dollar"
+    }
+  },
+  {
+    "ISOCode" : "TWD",
+    "localizedNames" : {
+      "de" : "Taiwan Dollar",
+      "en" : "Taiwan Dollar"
+    }
+  },
+  {
+    "ISOCode" : "UAH",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Ukrainian Hryvnia"
+    }
+  },
+  {
+    "ISOCode" : "UGX",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Ugandan Shilling"
+    }
+  },
+  {
+    "ISOCode" : "USD",
+    "localizedNames" : {
+      "de" : "US Dollar",
+      "en" : "US Dollar"
+    }
+  },
+  {
+    "ISOCode" : "UYU",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "Uruguayan Peso"
+    }
+  },
+  {
+    "ISOCode" : "UZS",
+    "localizedNames" : {
+      "de" : "Usbekischer Som",
+      "en" : "Uzbekistani Som"
+    }
+  },
+  {
+    "ISOCode" : "VND",
+    "localizedNames" : {
+      "de" : "Vietnamese Dong",
+      "en" : "Vietnamese Dong"
+    }
+  },
+  {
+    "ISOCode" : "XCD",
+    "localizedNames" : {
+      "de" : "$REPLACEME$",
+      "en" : "East Caribbean Dollar"
+    }
+  },
+  {
+    "ISOCode" : "ZAR",
+    "localizedNames" : {
+      "de" : "Süd-Afrikanischer Rand",
+      "en" : "South African Rand"
+    }
+  },
+  {
+    "ISOCode" : "ZWD",
+    "localizedNames" : {
+      "de" : "Zimbabwe Dollar",
+      "en" : "Zimbabwe Dollar"
+    }
+  }
+]

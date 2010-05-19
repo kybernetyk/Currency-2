@@ -157,6 +157,7 @@ static NSMutableCharacterSet *kEscapeChars;
         [self addErrorWithCode:EDEPTH description: @"Nested too deep"];
         return NO;
     }
+	
     [json appendString:@"{"];
     
     NSString *colon = [self humanReadable] ? @" : " : @":";

@@ -125,6 +125,9 @@ static JSCurrencyList *sharedSingleton = nil;
 
 - (void) updateAvailableCurrencyList
 {
+	
+	NSLog(@"updateAvailableCurrencyList");
+	
 	if (isUpdating)
 	{
 		NSLog(@"updating already! exit!");
@@ -180,7 +183,10 @@ static JSCurrencyList *sharedSingleton = nil;
 	NSLog(@"connection did finish!");
 	NSString *theList =  [[NSString alloc] initWithData: tempUpdateData encoding: NSUTF8StringEncoding];
 	
+	NSLog(@"%@",theList);
+	
 	[self updateStoredListWithJSON: theList];
+
 	
 	[theList release];
 	[tempUpdateData release];
@@ -190,10 +196,13 @@ static JSCurrencyList *sharedSingleton = nil;
 
 - (void) updateStoredListWithJSON: (NSString *) jsonString
 {
+	NSLog(@"updateStoredListWithJSON");
 	
 	SBJSON *json = [[[SBJSON alloc] init] autorelease];
 	
 	NSArray *listArray = [json objectWithString: jsonString];
+	if (!listArray)
+		NSLog(@"%@",[json errorTrace]);
 	
 	//	NSLog(@"list array: %@", listArray);
 	
