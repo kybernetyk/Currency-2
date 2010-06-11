@@ -34,7 +34,8 @@
 						 [NSNumber numberWithDouble: 1.0], @"bookmark0",
 						 [NSNumber numberWithDouble: 19.95], @"bookmark1",
  						 [NSNumber numberWithDouble: 49.95], @"bookmark2",
-						 [NSNumber numberWithDouble: 79.95], @"bookmark3",						 
+						 [NSNumber numberWithDouble: 79.95], @"bookmark3",
+						 [NSNumber numberWithBool: YES], @"firstStart",		//status to check if the app was launched for the first time -> create default data
 						 nil];
 	
 	[defs registerDefaults: reg];

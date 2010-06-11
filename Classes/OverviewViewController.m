@@ -11,6 +11,7 @@
 #import "AtomTableViewCell.h"
 #import "JSManagedConversion.h"
 #import "JSDataCore.h"
+#import "JSCurrencyList.h"
 #import "ConversionDetailViewController.h"
 #import "EditListViewController.h"
 
@@ -153,10 +154,81 @@
 		abort();
 	}
 	
+	if ([defs boolForKey: @"firstStart"])
+	{
+		[defs setBool: NO forKey: @"firstStart"];
+		
+		[self createDefaultDataSet];
+	}
+	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRates) name: @"watchlistDidChange" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
 }
 
+- (void) createDefaultDataSet
+{
+	/* create default data set */
+	NSLog(@"creating default data set ...");
+	NSError *error = nil;
+	//		[self setFetchedResultsController: [JSCurrencyList currencyListController]];
+	
+	[[JSCurrencyList sharedCurrencyList] createDummyDataSet];
+	
+	
+	
+	NSFetchedResultsController *cont = [JSCurrencyList currencyListController];
+	if (![cont performFetch:&error]) 
+	{
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	JSManagedCurrency *fromCurrency = nil;
+	JSManagedCurrency *toCurrency = nil;
+	
+	NSLog(@"currencies in list: %i",[[cont fetchedObjects] count]);
+	
+	for (JSManagedCurrency *currency in [cont fetchedObjects])
+	{	
+		NSLog(@"currency: %@",currency);
+		
+		if ([[currency ISOCode] isEqualToString: @"EUR"])
+			fromCurrency = currency;
+		if ([[currency ISOCode] isEqualToString: @"USD"])
+			toCurrency = currency;
+	}
+	
+	
+	JSDataCore *dataCore = [JSDataCore sharedInstance];	
+	JSManagedConversion *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName: @"Conversion" 
+																		  inManagedObjectContext: [dataCore managedObjectContext]];
+	
+	// If appropriate, configure the new managed object.
+	//	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+	
+	NSDecimalNumber *num = [NSDecimalNumber decimalNumberWithString: @"1.0"];
+	
+	[newManagedObject setTimeStamp: [NSDate date]];
+	[newManagedObject setFromCurrency: [fromCurrency ISOCode]];
+	[newManagedObject setToCurrency: [toCurrency ISOCode]];
+	[newManagedObject setConversionRatio: num];
+	
+	[newManagedObject setFC: fromCurrency];
+	[newManagedObject setTC: toCurrency];
+	[newManagedObject setSortOrder: [NSNumber numberWithInteger: 0] ];
+	
+	
+	// Save the context.
+	if (![[dataCore managedObjectContext] save:&error]) 
+	{
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	
+	/*    */
+	
+}
 
 - (void) defaultsDidChange: (NSNotification *) aNotification
 {

@@ -40,6 +40,7 @@
 		038BE9051173AA1700B75B43 /* JSManagedConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9041173AA1700B75B43 /* JSManagedConversion.m */; };
 		038BE9671173AEE300B75B43 /* JSManagedCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9661173AEE300B75B43 /* JSManagedCurrency.m */; };
 		038BEA5611745F6E00B75B43 /* JSDataCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BEA5511745F6E00B75B43 /* JSDataCore.m */; };
+		0391929911C2455700B85356 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391929811C2455700B85356 /* icon.png */; };
 		03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC74A117C3C730031EF67 /* SettingsViewController.m */; };
 		03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DFC74B117C3C730031EF67 /* SettingsViewController.xib */; };
 		03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC9611181C13D0031EF67 /* HelpViewController.m */; };
@@ -121,6 +122,7 @@
 		038BE9661173AEE300B75B43 /* JSManagedCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSManagedCurrency.m; sourceTree = "<group>"; };
 		038BEA5411745F6E00B75B43 /* JSDataCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDataCore.h; sourceTree = "<group>"; };
 		038BEA5511745F6E00B75B43 /* JSDataCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDataCore.m; sourceTree = "<group>"; };
+		0391929811C2455700B85356 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		03DFC749117C3C730031EF67 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
 		03DFC74A117C3C730031EF67 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		03DFC74B117C3C730031EF67 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0391929811C2455700B85356 /* icon.png */,
 				03F9F863119B194D000CA35E /* currency_list.json */,
 				033783F5119723B600FA3744 /* 90-lifebuoy.png */,
 				033783F3119723A700FA3744 /* 84-lightbulb.png */,
@@ -393,6 +396,7 @@
 				033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */,
 				03F9F864119B194D000CA35E /* currency_list.json in Resources */,
 				0334609E11A40C990015E835 /* chartslol in Resources */,
+				0391929911C2455700B85356 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +437,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0347C1A611C2548F00EAD94A /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Distribution;
+		};
+		0347C1A711C2548F00EAD94A /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Currency2_Prefix.pch;
+				INFOPLIST_FILE = "Currency2-Info.plist";
+				PRODUCT_NAME = Currency2;
+			};
+			name = Distribution;
+		};
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,9 +495,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Debug;
@@ -493,6 +525,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				0347C1A711C2548F00EAD94A /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -502,6 +535,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				0347C1A611C2548F00EAD94A /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

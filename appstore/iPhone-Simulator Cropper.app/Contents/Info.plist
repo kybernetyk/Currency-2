@@ -4,31 +4,27 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>CFBundleDisplayName</key>
-	<string>Currency 2</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>iPhone-Simulator Cropper</string>
 	<key>CFBundleIconFile</key>
-	<string>icon.png</string>
+	<string>App.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.fluxforge.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>de.curioustimes.iphonesimulatorcropper</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>iPhone-Simulator Cropper</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>UIPrerenderedIcon</key>
-	<true/>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleBlackOpaque</string>
+	<string>2.2</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.6</string>
 	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>
