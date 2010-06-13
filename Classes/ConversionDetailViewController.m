@@ -243,7 +243,7 @@
 		}
 		else
 		{	
-			NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><p><center><h2>You're offline!<p>There was also<p> no cached chart found!<p> Please connect<p>to the internet!</h2></center></body></html>"];
+			NSString *s = [NSString stringWithFormat:@"<html><head></head><body style='background-color: transparent; color: black;'><p><center><h2>%@</h2></center></body></html>",NSLocalizedString(@"You're offline!<p>There was also<p> no cached chart found!<p> Please connect<p>to the internet!",@"lol html error lol")];
 			[chartImageView loadHTMLString:s baseURL: [NSURL URLWithString: @"file:///"]];
 			
 			NSLog(@"############## fuckup ########");

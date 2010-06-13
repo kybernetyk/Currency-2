@@ -75,7 +75,7 @@
 	//[[self editButtonItem] setTarget: self];
 	//[[self editButtonItem] setAction: @selector(doneButton:)];
 
-	[self setTitle: @"Manage List"];
+	[self setTitle: NSLocalizedString(@"Manage List",@"manage list")];
 	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) 
@@ -217,9 +217,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	if (section == 0)
-		return @"You Current Watchlist";
+		return NSLocalizedString(@"You Current Watchlist", @"your current watchlist");
 	if (section == 1)
-		return @"Add/Remove";
+		return NSLocalizedString(@"Add/Remove",@"add/remove");
 	
 	return nil;
 }
@@ -277,7 +277,7 @@
 	}
 	else
 	{
-		[[cell textLabel] setText: @"Add New Currency"];
+		[[cell textLabel] setText: NSLocalizedString(@"Add New Currency",@"add new currency")];
 	}
 	
 

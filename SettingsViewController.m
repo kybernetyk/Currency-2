@@ -146,10 +146,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	if (section == 0)
-		return @"Forced Offline Mode";
+		return NSLocalizedString(@"Forced Offline Mode",@"forced offline mode");
 	
 	if (section == 1)
-		return @"Quick Access Bookmarks";
+		return NSLocalizedString(@"Quick Access Bookmarks","quick access bookmarks");
 	
 	return nil;
 }
@@ -158,9 +158,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
 	if (section == 0)
-		return @"Forces Currency 2 to stay offline.";
+		return NSLocalizedString(@"Forces Currency 2 to stay offline.",@"");
 	if (section == 1)
-		return @"The green bar in the main view.";
+		return NSLocalizedString(@"The green bar in the main view.",@"");
 	
 	return nil;
 }
@@ -206,7 +206,7 @@
 			}
 			
 			// Set up the cell...
-			[[cell textLabel] setText: @"Offline Mode"];
+			[[cell textLabel] setText: NSLocalizedString(@"Offline Mode",@"")];
 			return cell;
 		}
 	}
@@ -252,7 +252,7 @@
 		}
 		else
 		{	
-			[[cell textLabel] setText: @"Restore Defaults"];
+			[[cell textLabel] setText: NSLocalizedString(@"Restore Defaults",@"")];
 			 [cell setSelectionStyle: UITableViewCellSelectionStyleBlue];
 		}
 		

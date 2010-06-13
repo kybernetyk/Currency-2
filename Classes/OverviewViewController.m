@@ -315,12 +315,12 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	if (![[[UIApplication sharedApplication] delegate] isOnline])
-		return @"Your Watchlist [no network]";
+		return NSLocalizedString (@"Your Watchlist [no network]",@"Watchlist with no network");
 
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	
 	BOOL offlineMode = [[defs objectForKey: @"offlineMode"] boolValue];
 	if (offlineMode)
-			return @"Your Watchlist [offline mode]";
+			return NSLocalizedString(@"Your Watchlist [offline mode]",@"Watchlist with offline mode");
 	
 	return @"Your Watchlist";
 }
@@ -328,7 +328,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
 	if ([[fetchedResultsController fetchedObjects] count] <= 0)
-		return @"Last Update: Never";	
+		return NSLocalizedString(@"Last Update: Never", @"Never Updated");	
 	
 	JSManagedConversion *firstConversion = [[fetchedResultsController fetchedObjects] objectAtIndex: 0];
 	
@@ -340,14 +340,14 @@
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 		
 		
-		return [NSString stringWithFormat: @"Last Update: %@", [dateFormatter stringFromDate:  [firstConversion lastUpdated]]];
+		return [NSString stringWithFormat: @"%@ %@",NSLocalizedString(@"Last Update:", @"last update"), [dateFormatter stringFromDate:  [firstConversion lastUpdated]]];
 	}
 	else
 	{
-		return @"Last Update: Never";
+		return NSLocalizedString(@"Last Update: Never", @"Never Updated");	
 	}
 	
-	return @"Last Update: Never";
+	return NSLocalizedString(@"Last Update: Never", @"Never Updated");	
 }
 
 #endif
@@ -385,8 +385,8 @@
 	if ([[editField text] length] == 0 ||
 		[[editField text] floatValue] == 0.0)
 	{
-		[cell setText1:@"Wrong input!"];
-		[cell setText2:@"Conversion not possible."];	
+		[cell setText1:NSLocalizedString(@"Wrong input!",@"wrong input")];
+		[cell setText2:NSLocalizedString(@"Conversion not possible.",@"conversion not possible")];	
 
 
 		return cell;
@@ -407,8 +407,8 @@
 	if ([conversionRatio isEqual: [NSDecimalNumber notANumber]] ||
 		[conversionRatio isEqual: [NSDecimalNumber zero]])
 	{
-		[cell setText1:@"NaN or Zero!"];	
-		[cell setText2:@"Conversion not possible."];	
+		[cell setText1:NSLocalizedString(@"Wrong input!",@"wrong input")];
+		[cell setText2:NSLocalizedString(@"Conversion not possible.",@"conversion not possible")];	
 		
 		return cell;
 	}

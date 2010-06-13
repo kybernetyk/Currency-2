@@ -89,8 +89,8 @@
 	[self pickerView: picker didSelectRow: leftRow inComponent: 0];
 	[self pickerView: picker didSelectRow: rightRow inComponent: 1];
 
-	[self setTitle: @"New Conversion"];
-	[infoLabel setText: [NSString stringWithFormat: @"Currently %i currencies in list.\nLast list update: %@",[[[self fetchedResultsController] fetchedObjects] count], [defs objectForKey:@"lastListUpdate"] ]];
+	[self setTitle: NSLocalizedString(@"New Conversion",@"new conversion")];
+	[infoLabel setText: [NSString stringWithFormat: NSLocalizedString(@"Currently %i currencies in list.\nLast list update: %@",@"whatever man"),[[[self fetchedResultsController] fetchedObjects] count], [defs objectForKey:@"lastListUpdate"] ]];
 }
 
 - (void)viewWillAppear:(BOOL)animated 
