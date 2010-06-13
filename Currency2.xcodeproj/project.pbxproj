@@ -45,6 +45,7 @@
 		03BAEA2E11C50217005B756E /* MissingCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1E11C50217005B756E /* MissingCurrencyViewController.xib */; };
 		03BAEA2F11C50217005B756E /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA2011C50217005B756E /* OverviewViewController.xib */; };
 		03BAEA3111C50217005B756E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA2411C50217005B756E /* SettingsViewController.xib */; };
+		03BAEA9D11C50B0E005B756E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA9B11C50B0E005B756E /* Localizable.strings */; };
 		03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC74A117C3C730031EF67 /* SettingsViewController.m */; };
 		03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC9611181C13D0031EF67 /* HelpViewController.m */; };
 		03F514CD1175C7C8009C0722 /* ConversionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */; };
@@ -135,6 +136,7 @@
 		03BAEA5611C5039B005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/ConversionDetailViewController.xib; sourceTree = "<group>"; };
 		03BAEA5D11C503DC005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/HelpViewController.xib; sourceTree = "<group>"; };
 		03BAEA6011C50406005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
+		03BAEA9C11C50B0E005B756E /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03DFC749117C3C730031EF67 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
 		03DFC74A117C3C730031EF67 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		03DFC9601181C13D0031EF67 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03BAEA9B11C50B0E005B756E /* Localizable.strings */,
 				03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */,
 				03BAEA1011C50217005B756E /* AtomCell.xib */,
 				03BAEA1211C50217005B756E /* ConversionDetailViewController.xib */,
@@ -402,6 +405,7 @@
 				03BAEA2E11C50217005B756E /* MissingCurrencyViewController.xib in Resources */,
 				03BAEA2F11C50217005B756E /* OverviewViewController.xib in Resources */,
 				03BAEA3111C50217005B756E /* SettingsViewController.xib in Resources */,
+				03BAEA9D11C50B0E005B756E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +533,14 @@
 				03BAEA5211C5036A005B756E /* German */,
 			);
 			name = SettingsViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA9B11C50B0E005B756E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA9C11C50B0E005B756E /* German */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
