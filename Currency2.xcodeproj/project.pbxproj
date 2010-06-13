@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		0334609E11A40C990015E835 /* chartslol in Resources */ = {isa = PBXBuildFile; fileRef = 0334609D11A40C990015E835 /* chartslol */; };
 		033782A5119709CF00FA3744 /* HelpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033782A3119709CF00FA3744 /* HelpDetailViewController.m */; };
-		033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033782A4119709CF00FA3744 /* HelpDetailViewController.xib */; };
 		033782D81197104C00FA3744 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 033782D71197104C00FA3744 /* bookmarks.png */; };
 		03378316119712FC00FA3744 /* currency2help.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03378315119712FC00FA3744 /* currency2help.txt */; };
 		0337832D1197156B00FA3744 /* MissingCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */; };
-		0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */; };
 		0337835D1197193200FA3744 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0337835C1197193200FA3744 /* MessageUI.framework */; };
 		033783EA119722C200FA3744 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783E9119722C200FA3744 /* 20-gear2.png */; };
 		033783EC1197232900FA3744 /* 12-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783EB1197232900FA3744 /* 12-eye.png */; };
@@ -23,30 +21,33 @@
 		033783F4119723A700FA3744 /* 84-lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F3119723A700FA3744 /* 84-lightbulb.png */; };
 		033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F5119723B600FA3744 /* 90-lifebuoy.png */; };
 		0378E0D711732FCE00C783F5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E0D511732FCE00C783F5 /* OverviewViewController.m */; };
-		0378E0D811732FCE00C783F5 /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E0D611732FCE00C783F5 /* OverviewViewController.xib */; };
 		0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378E1151173307C00C783F5 /* CoreData.framework */; };
 		0378E1491173395900C783F5 /* coer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0378E1481173395900C783F5 /* coer.xcdatamodel */; };
 		0378E1A011733DC300C783F5 /* dotHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0378E19E11733DC300C783F5 /* dotHighlighted.png */; };
 		0378E1A111733DC300C783F5 /* dotNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0378E19F11733DC300C783F5 /* dotNormal.png */; };
 		0378E1AF11733EA500C783F5 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E1AE11733EA500C783F5 /* NSString+Additions.m */; };
-		0378E2F611735C7C00C783F5 /* AtomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E2F511735C7C00C783F5 /* AtomCell.xib */; };
 		0378E2F911735CB200C783F5 /* AtomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E2F811735CB200C783F5 /* AtomTableViewCell.m */; };
 		0378E31011735EE000C783F5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0378E30E11735EE000C783F5 /* back.png */; };
 		0378E31111735EE000C783F5 /* cell_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0378E30F11735EE000C783F5 /* cell_1.png */; };
 		0378E3851173688D00C783F5 /* EditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E3831173688D00C783F5 /* EditListViewController.m */; };
-		0378E3861173688D00C783F5 /* EditListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E3841173688D00C783F5 /* EditListViewController.xib */; };
 		0378E4E011737A3B00C783F5 /* AddCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E4DE11737A3B00C783F5 /* AddCurrencyViewController.m */; };
-		0378E4E111737A3B00C783F5 /* AddCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0378E4DF11737A3B00C783F5 /* AddCurrencyViewController.xib */; };
 		038BE9051173AA1700B75B43 /* JSManagedConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9041173AA1700B75B43 /* JSManagedConversion.m */; };
 		038BE9671173AEE300B75B43 /* JSManagedCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9661173AEE300B75B43 /* JSManagedCurrency.m */; };
 		038BEA5611745F6E00B75B43 /* JSDataCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BEA5511745F6E00B75B43 /* JSDataCore.m */; };
 		0391929911C2455700B85356 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391929811C2455700B85356 /* icon.png */; };
+		03BAEA2611C50217005B756E /* AddCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */; };
+		03BAEA2711C50217005B756E /* AtomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1011C50217005B756E /* AtomCell.xib */; };
+		03BAEA2811C50217005B756E /* ConversionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1211C50217005B756E /* ConversionDetailViewController.xib */; };
+		03BAEA2911C50217005B756E /* EditListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1411C50217005B756E /* EditListViewController.xib */; };
+		03BAEA2A11C50217005B756E /* HelpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1611C50217005B756E /* HelpDetailViewController.xib */; };
+		03BAEA2B11C50217005B756E /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1811C50217005B756E /* HelpViewController.xib */; };
+		03BAEA2D11C50217005B756E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1C11C50217005B756E /* MainWindow.xib */; };
+		03BAEA2E11C50217005B756E /* MissingCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1E11C50217005B756E /* MissingCurrencyViewController.xib */; };
+		03BAEA2F11C50217005B756E /* OverviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA2011C50217005B756E /* OverviewViewController.xib */; };
+		03BAEA3111C50217005B756E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA2411C50217005B756E /* SettingsViewController.xib */; };
 		03DFC74C117C3C730031EF67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC74A117C3C730031EF67 /* SettingsViewController.m */; };
-		03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DFC74B117C3C730031EF67 /* SettingsViewController.xib */; };
 		03DFC9631181C13D0031EF67 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC9611181C13D0031EF67 /* HelpViewController.m */; };
-		03DFC9641181C13D0031EF67 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DFC9621181C13D0031EF67 /* HelpViewController.xib */; };
 		03F514CD1175C7C8009C0722 /* ConversionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */; };
-		03F514CE1175C7C8009C0722 /* ConversionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */; };
 		03F515321175CC69009C0722 /* JSCurrencyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F515311175CC69009C0722 /* JSCurrencyList.m */; };
 		03F5A72E117899290067E642 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F5A72D117899290067E642 /* Reachability.m */; };
 		03F5A75111789B980067E642 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F5A75011789B980067E642 /* SystemConfiguration.framework */; };
@@ -61,9 +62,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
-		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,12 +81,10 @@
 		0334609D11A40C990015E835 /* chartslol */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chartslol; sourceTree = "<group>"; };
 		033782A2119709CF00FA3744 /* HelpDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDetailViewController.h; sourceTree = "<group>"; };
 		033782A3119709CF00FA3744 /* HelpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDetailViewController.m; sourceTree = "<group>"; };
-		033782A4119709CF00FA3744 /* HelpDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpDetailViewController.xib; path = Classes/HelpDetailViewController.xib; sourceTree = "<group>"; };
 		033782D71197104C00FA3744 /* bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmarks.png; sourceTree = "<group>"; };
 		03378315119712FC00FA3744 /* currency2help.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = currency2help.txt; sourceTree = "<group>"; };
 		0337832A1197156B00FA3744 /* MissingCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissingCurrencyViewController.h; sourceTree = "<group>"; };
 		0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissingCurrencyViewController.m; sourceTree = "<group>"; };
-		0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MissingCurrencyViewController.xib; path = Classes/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
 		0337835C1197193200FA3744 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		033783E9119722C200FA3744 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		033783EB1197232900FA3744 /* 12-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12-eye.png"; sourceTree = "<group>"; };
@@ -98,24 +95,20 @@
 		033783F5119723B600FA3744 /* 90-lifebuoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-lifebuoy.png"; sourceTree = "<group>"; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
-		0378E0D611732FCE00C783F5 /* OverviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OverviewViewController.xib; path = Classes/OverviewViewController.xib; sourceTree = "<group>"; };
 		0378E1151173307C00C783F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0378E1481173395900C783F5 /* coer.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = coer.xcdatamodel; sourceTree = "<group>"; };
 		0378E19E11733DC300C783F5 /* dotHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotHighlighted.png; sourceTree = "<group>"; };
 		0378E19F11733DC300C783F5 /* dotNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotNormal.png; sourceTree = "<group>"; };
 		0378E1AD11733EA500C783F5 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		0378E1AE11733EA500C783F5 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		0378E2F511735C7C00C783F5 /* AtomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomCell.xib; sourceTree = "<group>"; };
 		0378E2F711735CB200C783F5 /* AtomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomTableViewCell.h; sourceTree = "<group>"; };
 		0378E2F811735CB200C783F5 /* AtomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomTableViewCell.m; sourceTree = "<group>"; };
 		0378E30E11735EE000C783F5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		0378E30F11735EE000C783F5 /* cell_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_1.png; sourceTree = "<group>"; };
 		0378E3821173688D00C783F5 /* EditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditListViewController.h; sourceTree = "<group>"; };
 		0378E3831173688D00C783F5 /* EditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditListViewController.m; sourceTree = "<group>"; };
-		0378E3841173688D00C783F5 /* EditListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditListViewController.xib; path = Classes/EditListViewController.xib; sourceTree = "<group>"; };
 		0378E4DD11737A3B00C783F5 /* AddCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCurrencyViewController.h; sourceTree = "<group>"; };
 		0378E4DE11737A3B00C783F5 /* AddCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCurrencyViewController.m; sourceTree = "<group>"; };
-		0378E4DF11737A3B00C783F5 /* AddCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddCurrencyViewController.xib; path = Classes/AddCurrencyViewController.xib; sourceTree = "<group>"; };
 		038BE9031173AA1700B75B43 /* JSManagedConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSManagedConversion.h; sourceTree = "<group>"; };
 		038BE9041173AA1700B75B43 /* JSManagedConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSManagedConversion.m; sourceTree = "<group>"; };
 		038BE9651173AEE300B75B43 /* JSManagedCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSManagedCurrency.h; sourceTree = "<group>"; };
@@ -123,15 +116,31 @@
 		038BEA5411745F6E00B75B43 /* JSDataCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDataCore.h; sourceTree = "<group>"; };
 		038BEA5511745F6E00B75B43 /* JSDataCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDataCore.m; sourceTree = "<group>"; };
 		0391929811C2455700B85356 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		03BAEA0F11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AddCurrencyViewController.xib; sourceTree = "<group>"; };
+		03BAEA1111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AtomCell.xib; sourceTree = "<group>"; };
+		03BAEA1311C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ConversionDetailViewController.xib; sourceTree = "<group>"; };
+		03BAEA1511C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/EditListViewController.xib; sourceTree = "<group>"; };
+		03BAEA1711C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/HelpDetailViewController.xib; sourceTree = "<group>"; };
+		03BAEA1911C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/HelpViewController.xib; sourceTree = "<group>"; };
+		03BAEA1D11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		03BAEA1F11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
+		03BAEA2111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
+		03BAEA2511C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
+		03BAEA4311C5028A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		03BAEA5011C5034C005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
+		03BAEA5211C5036A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
+		03BAEA5311C50376005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/HelpDetailViewController.xib; sourceTree = "<group>"; };
+		03BAEA5411C50383005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/EditListViewController.xib; sourceTree = "<group>"; };
+		03BAEA5511C50391005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/AddCurrencyViewController.xib; sourceTree = "<group>"; };
+		03BAEA5611C5039B005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/ConversionDetailViewController.xib; sourceTree = "<group>"; };
+		03BAEA5D11C503DC005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/HelpViewController.xib; sourceTree = "<group>"; };
+		03BAEA6011C50406005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
 		03DFC749117C3C730031EF67 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
 		03DFC74A117C3C730031EF67 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
-		03DFC74B117C3C730031EF67 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		03DFC9601181C13D0031EF67 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		03DFC9611181C13D0031EF67 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		03DFC9621181C13D0031EF67 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HelpViewController.xib; path = Classes/HelpViewController.xib; sourceTree = "<group>"; };
 		03F514CA1175C7C8009C0722 /* ConversionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversionDetailViewController.h; sourceTree = "<group>"; };
 		03F514CB1175C7C8009C0722 /* ConversionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionDetailViewController.m; sourceTree = "<group>"; };
-		03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConversionDetailViewController.xib; path = Classes/ConversionDetailViewController.xib; sourceTree = "<group>"; };
 		03F515301175CC69009C0722 /* JSCurrencyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCurrencyList.h; sourceTree = "<group>"; };
 		03F515311175CC69009C0722 /* JSCurrencyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCurrencyList.m; sourceTree = "<group>"; };
 		03F5A72C117899290067E642 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -156,10 +165,8 @@
 		1D3623250D0F684500981E51 /* Currency2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency2AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Currency2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* Currency2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency2_Prefix.pch; sourceTree = "<group>"; };
-		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Currency2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Currency2-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,6 +289,16 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */,
+				03BAEA1011C50217005B756E /* AtomCell.xib */,
+				03BAEA1211C50217005B756E /* ConversionDetailViewController.xib */,
+				03BAEA1411C50217005B756E /* EditListViewController.xib */,
+				03BAEA1611C50217005B756E /* HelpDetailViewController.xib */,
+				03BAEA1811C50217005B756E /* HelpViewController.xib */,
+				03BAEA1C11C50217005B756E /* MainWindow.xib */,
+				03BAEA1E11C50217005B756E /* MissingCurrencyViewController.xib */,
+				03BAEA2011C50217005B756E /* OverviewViewController.xib */,
+				03BAEA2411C50217005B756E /* SettingsViewController.xib */,
 				0391929811C2455700B85356 /* icon.png */,
 				03F9F863119B194D000CA35E /* currency_list.json */,
 				033783F5119723B600FA3744 /* 90-lifebuoy.png */,
@@ -291,24 +308,13 @@
 				033783ED1197234400FA3744 /* 16-line-chart.png */,
 				033783EB1197232900FA3744 /* 12-eye.png */,
 				033783E9119722C200FA3744 /* 20-gear2.png */,
-				0337832C1197156B00FA3744 /* MissingCurrencyViewController.xib */,
 				03378315119712FC00FA3744 /* currency2help.txt */,
 				033782D71197104C00FA3744 /* bookmarks.png */,
-				033782A4119709CF00FA3744 /* HelpDetailViewController.xib */,
-				03DFC9621181C13D0031EF67 /* HelpViewController.xib */,
-				03DFC74B117C3C730031EF67 /* SettingsViewController.xib */,
-				03F514CC1175C7C8009C0722 /* ConversionDetailViewController.xib */,
-				0378E4DF11737A3B00C783F5 /* AddCurrencyViewController.xib */,
 				0378E30E11735EE000C783F5 /* back.png */,
-				0378E3841173688D00C783F5 /* EditListViewController.xib */,
 				0378E30F11735EE000C783F5 /* cell_1.png */,
-				0378E2F511735C7C00C783F5 /* AtomCell.xib */,
 				0378E19E11733DC300C783F5 /* dotHighlighted.png */,
 				0378E19F11733DC300C783F5 /* dotNormal.png */,
 				0378E1481173395900C783F5 /* coer.xcdatamodel */,
-				0378E0D611732FCE00C783F5 /* OverviewViewController.xib */,
-				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
-				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Currency2-Info.plist */,
 			);
 			name = Resources;
@@ -370,23 +376,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
-				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
-				0378E0D811732FCE00C783F5 /* OverviewViewController.xib in Resources */,
 				0378E1A011733DC300C783F5 /* dotHighlighted.png in Resources */,
 				0378E1A111733DC300C783F5 /* dotNormal.png in Resources */,
-				0378E2F611735C7C00C783F5 /* AtomCell.xib in Resources */,
 				0378E31011735EE000C783F5 /* back.png in Resources */,
 				0378E31111735EE000C783F5 /* cell_1.png in Resources */,
-				0378E3861173688D00C783F5 /* EditListViewController.xib in Resources */,
-				0378E4E111737A3B00C783F5 /* AddCurrencyViewController.xib in Resources */,
-				03F514CE1175C7C8009C0722 /* ConversionDetailViewController.xib in Resources */,
-				03DFC74D117C3C730031EF67 /* SettingsViewController.xib in Resources */,
-				03DFC9641181C13D0031EF67 /* HelpViewController.xib in Resources */,
-				033782A6119709CF00FA3744 /* HelpDetailViewController.xib in Resources */,
 				033782D81197104C00FA3744 /* bookmarks.png in Resources */,
 				03378316119712FC00FA3744 /* currency2help.txt in Resources */,
-				0337832E1197156B00FA3744 /* MissingCurrencyViewController.xib in Resources */,
 				033783EA119722C200FA3744 /* 20-gear2.png in Resources */,
 				033783EC1197232900FA3744 /* 12-eye.png in Resources */,
 				033783EE1197234400FA3744 /* 16-line-chart.png in Resources */,
@@ -397,6 +392,16 @@
 				03F9F864119B194D000CA35E /* currency_list.json in Resources */,
 				0334609E11A40C990015E835 /* chartslol in Resources */,
 				0391929911C2455700B85356 /* icon.png in Resources */,
+				03BAEA2611C50217005B756E /* AddCurrencyViewController.xib in Resources */,
+				03BAEA2711C50217005B756E /* AtomCell.xib in Resources */,
+				03BAEA2811C50217005B756E /* ConversionDetailViewController.xib in Resources */,
+				03BAEA2911C50217005B756E /* EditListViewController.xib in Resources */,
+				03BAEA2A11C50217005B756E /* HelpDetailViewController.xib in Resources */,
+				03BAEA2B11C50217005B756E /* HelpViewController.xib in Resources */,
+				03BAEA2D11C50217005B756E /* MainWindow.xib in Resources */,
+				03BAEA2E11C50217005B756E /* MissingCurrencyViewController.xib in Resources */,
+				03BAEA2F11C50217005B756E /* OverviewViewController.xib in Resources */,
+				03BAEA3111C50217005B756E /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +440,98 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA0F11C50217005B756E /* English */,
+				03BAEA5511C50391005B756E /* German */,
+			);
+			name = AddCurrencyViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1011C50217005B756E /* AtomCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1111C50217005B756E /* English */,
+			);
+			name = AtomCell.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1211C50217005B756E /* ConversionDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1311C50217005B756E /* English */,
+				03BAEA5611C5039B005B756E /* German */,
+			);
+			name = ConversionDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1411C50217005B756E /* EditListViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1511C50217005B756E /* English */,
+				03BAEA5411C50383005B756E /* German */,
+			);
+			name = EditListViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1611C50217005B756E /* HelpDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1711C50217005B756E /* English */,
+				03BAEA5311C50376005B756E /* German */,
+			);
+			name = HelpDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1811C50217005B756E /* HelpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1911C50217005B756E /* English */,
+				03BAEA5D11C503DC005B756E /* German */,
+			);
+			name = HelpViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1C11C50217005B756E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1D11C50217005B756E /* English */,
+				03BAEA4311C5028A005B756E /* German */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA1E11C50217005B756E /* MissingCurrencyViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA1F11C50217005B756E /* English */,
+				03BAEA6011C50406005B756E /* German */,
+			);
+			name = MissingCurrencyViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA2011C50217005B756E /* OverviewViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA2111C50217005B756E /* English */,
+				03BAEA5011C5034C005B756E /* German */,
+			);
+			name = OverviewViewController.xib;
+			sourceTree = "<group>";
+		};
+		03BAEA2411C50217005B756E /* SettingsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BAEA2511C50217005B756E /* English */,
+				03BAEA5211C5036A005B756E /* German */,
+			);
+			name = SettingsViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0347C1A611C2548F00EAD94A /* Distribution */ = {

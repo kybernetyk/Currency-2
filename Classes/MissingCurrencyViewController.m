@@ -21,7 +21,7 @@
 {
 	if ([[currencyList text] length] <= 0)
 	{
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"No currency specified" message: @"Please enter at least one currency you would like to see in Currency 2" delegate: nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString (@"No currency specified",@"") message: NSLocalizedString (@"Please enter at least one currency you would like to see in Currency 2",@"") delegate: nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 		[alert show];
 		[alert release];
 		
@@ -31,10 +31,10 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self; 
 	[picker setToRecipients: [NSArray arrayWithObject: @"support@fluxforge.com"]];
-	[picker setSubject: @"Currency 2 - Currency Suggestion"];
+	[picker setSubject: NSLocalizedString (@"Currency 2 - Currency Suggestion",@"email subject")];
 	
 	// Fill out the email body text
-	NSString *emailBody = [NSString stringWithFormat:@"Hello Flux Forge!\n\nI'd like to see the following currencies added to Currency 2: %@\n",[currencyList text] ];
+	NSString *emailBody = [NSString stringWithFormat:@"%@ %@\n",NSLocalizedString(@"Hello Flux Forge!\n\nI'd like to see the following currencies added to Currency 2: ",@"email body"),[currencyList text] ];
 	
 	[picker setMessageBody: emailBody isHTML: NO]; // depends. Mostly YES, unless you want to send it as plain text (boring)
 	
@@ -58,7 +58,8 @@
 			break;
 		case MFMailComposeResultSent:
 		{	
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Currency Suggestion" message:@"The suggestion has been sent. We will add the missing currency ASAP and get back to you!"
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString (@"Currency Suggestion",@"") 
+															message:NSLocalizedString (@"The suggestion has been sent. We will add the missing currency ASAP and get back to you!",@"")
 														   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
 			[alert show];
 			[alert release];
@@ -70,7 +71,8 @@
 			
 		default:
 		{
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString (@"Email",@"")
+															message:NSLocalizedString (@"Sending Failed - Unknown Error :-(",@"")
 														   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
 			[alert show];
 			[alert release];
