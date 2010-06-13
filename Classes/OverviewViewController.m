@@ -322,7 +322,7 @@
 	if (offlineMode)
 			return NSLocalizedString(@"Your Watchlist [offline mode]",@"Watchlist with offline mode");
 	
-	return @"Your Watchlist";
+	return NSLocalizedString(@"Your Watchlist",@"");
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
