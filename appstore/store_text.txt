@@ -1,12 +1,22 @@
-Get Currency 2 now!
+Over 70 supported currencies, real time exchange rates, offline mode and much more: Currency 2 is an awesome currency converter!
 
-We believe we've made the most usable currency converter on the whole app store! We took all the feedback we got from our Currency.app users and rewrote the app with that feedback in mind. Now we believe we've come up with the best currency converter you can get.
+Features:
+* Realtime Exchange Rates
+* Over 70 Currencies
+* New Currencies are added by support within an hour of notification
+* Offline Mode
+* Exchange Rate History
+* Bookmarks
+* Runs on iPhone OS 3 and 4 (and iPod Touch)
+
+We believe we have made the most usable currency converter on the app store! We took all the feedback we got from our Currency.app users and rewrote the app from scratch. Now we believe we've come up with the best currency converter you can get. 
 
 Our main concern was usability. It was most important to us to make the app as comfortable and as fast as possible to use for everyday users. Thus we implemented the amazing Quick Access Bookmarks which enable you to save often used conversion values for quick access with only one tap.
 
+
 But that's not all. We've got a lot of feedback from people who travelled to regions of the world where network connections are really slow - and the roaming fees are incredibly high. So we built the forced offline mode which, no matter what, forces Currency 2 to stay offline and not even send one byte of data. In this mode Currency 2 does not update exchange rates and currency lists from the net - it uses saved exchange rates from the last time it was connected to the internet. Update the rates once in the morning over your hotel's wifi and do not care about roaming fees!
 
-Then there's features like history graphs of exchange rates and an awesome support that will add any currency you think is missing - within hours of notification! 
+Then there's features like over 70 supported currencies, real time exchange rates, history graphs of exchange rates and an awesome support that will add any currency you think is missing - within hours of notification! 
 
 Don't let fool you by other app's eye-candy which look nice but are simply unusable! Get Currency 2 now and never look for another currency converter!
 
@@ -14,7 +24,16 @@ Oh and yes: This app works on iPhone OS 3 and 4!
 
 --
 
-Jetzt Currency 2 laden und nie wieder einen anderen Währungsrechner nutzen!
+Jetzt Currency 2 laden und nie wieder einen anderen Währungsrechner nutzen! Über 70 unterstützte Währungen, Echtzeitkurse, Offline Modus, und vieles mehr ...
+
+Features:
+* Echtzeit Wechselkurse
+* Über 70 Währungen
+* Fehlende Währungen können auf Anfrage innerhalb einer Stunde zugefügt werden
+* Offline Modus
+* Diagramme mit Wechselkursen der vergangenen Monate
+* Bookmarks
+* Läuft auf iPhone OS 3 und 4 (und iPod Touch)
 
 Wir glauben, wir haben den besten Währungsrechner im ganzen Appstore geschrieben. Wir haben das Feedback unserer Currency.app und Währung.app User genommen und von Grund auf eine komplett neue App gebaut. Dabei haben wir vor allem auf einfache und durchdachte Benutzbarkeit geachtet.
 
@@ -22,8 +41,9 @@ Mit dem Bookmarks Feature ist es Ihnen möglich oft benzute Umrechnungsbeträge 
 
 Unser anderes grossartiges Feature ist der Offline Modus, der die app zwingt nicht aufs Internet zuzugreifen. Ärger üeber langsames Netz oder hohe Roaming-Kosten im Urlaub gehört damit der Vergangenheit an. Einfach einmal am Tag die Kurse übers Hotel-Wlan aktuallisieren und Currency 2 wird dann diese nutzen ohne mit dem Internet verbunden sein zu müssen.
 
-Neben diesen herausragenden Features gibt es natürlich ein Dieagramm zu jeder Umrechnung mit den Kursverläufen der letzten Monate und einen superschnellen deutschsprachigen Support, der fehlende Währungen innerhalb von Stunden einbindet!
+Neben diesen herausragenden Features gibt es natürlich ein Diagramm zu jeder Umrechnung mit den Kursverläufen der letzten Monate und einen superschnellen deutschsprachigen Support, der fehlende Währungen innerhalb von Stunden einbindet!
 
 Lassen Sie sich nicht vom Eye-Candy anderer Währungsrechner täuschen. Denn diese sind meistens umständlich zu benutzen. Laden Sie sich jetzt Currency 2 runter und schauen Sie nie wieder nach einem anderen Währungsrechner für ihr iPhone!
 
 Und ja: Diese App läuft auf iPhone OS Version 3 und 4!
+
