@@ -1,13 +1,14 @@
 //
 // Prefix header for all source files of the 'Currency2' target in the 'Currency2' project
 //
+
 #import <Availability.h>
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
     #import <CoreData/CoreData.h>
-
+	#import "UITabBarController+rotationfix.h"
 	//#define NSLog(format, ...)
 #endif
 

@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// hack for iAd orientation shit
 
-@interface MyTabBarController : UITabBarController 
-{
-
-}
-
+@interface UITabBarController (rotationfix)
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation ;
 @end
 

@@ -6,14 +6,14 @@
 //  Copyright 2010 flux forge. All rights reserved.
 //
 
-#import "MyTabBarController.h"
+#import "UITabBarController+rotationfix.h"
 
 
-@implementation MyTabBarController
+@implementation UITabBarController (rotationfix)
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-
-    NSLog(@"mein penis ist riesig!");
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+	NSLog(@"psnis gross!");
 	// Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
