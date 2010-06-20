@@ -14,6 +14,7 @@
 #import "JSCurrencyList.h"
 #import "ConversionDetailViewController.h"
 #import "EditListViewController.h"
+#import <iAd/iAd.h>
 
 @implementation OverviewViewController
 @synthesize fetchedResultsController;
@@ -96,6 +97,8 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+
+
 	
 	// Set up the edit and add buttons.
 	//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -163,6 +166,25 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRates) name: @"watchlistDidChange" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
+	
+/*	CGRect tableAdVisibleFrame;
+	CGRect tableStandardFrame;	
+	
+	CGRect adOffscreenFrame;
+	CGRect adOnscreenFrame;*/
+	
+	isBannerVisible = NO;
+	
+	tableAdVisibleFrame = [tableView frame];
+	tableStandardFrame = [tableView frame];
+
+	tableStandardFrame.origin.y -= 50;
+	tableStandardFrame.size.height += 50;
+	
+	adOnscreenFrame = [bannerView frame];
+	adOffscreenFrame = [bannerView frame];
+	adOffscreenFrame.origin.y -= 80;
+	
 }
 
 - (void) createDefaultDataSet
@@ -258,6 +280,21 @@
 #endif
 	
 	[super viewWillAppear:animated];
+	
+	if (!isBannerVisible)
+	{
+		/*[bannerView setFrame: CGRectOffset([bannerView frame], 0, -150)];
+		
+		CGRect f = [tableView frame];
+		f.origin.y -= 50;
+		f.size.height += 50;
+		
+		[tableView setFrame: f];		*/
+		
+		
+		[bannerView setFrame: adOffscreenFrame];
+		[tableView setFrame: tableStandardFrame];
+	}
 }
 
 /*
@@ -283,13 +320,12 @@
 }
 */
 
-/*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -734,7 +770,45 @@
 	//	numericTextField.text = [numericTextField.text stringByAppendingString:@"."];
 }
 
+#pragma mark -
+#pragma mark iAd delegate
 
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+	NSLog(@"bannerViewActionShouldBegin:");
+	return YES;	
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	NSLog(@"banner did load ...");
+	
+    if (!isBannerVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+		// assumes the banner view is offset 50 pixels so that it is not visible.
+        //banner.frame = CGRectOffset(banner.frame, 0, 50);
+		/*[bannerView setFrame: CGRectOffset([bannerView frame], 0, 150)];
+		
+		CGRect f = [tableView frame];
+		f.origin.y += 50;
+		f.size.height -= 50;
+		[tableView setFrame: f];		*/
+		
+		[tableView setFrame: tableAdVisibleFrame];
+		[bannerView setFrame: adOnscreenFrame];
+		
+        [UIView commitAnimations];
+        isBannerVisible = YES;
+    }
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	
+	NSLog(@"failed to get $$$: %@",[error localizedDescription]);
+	
+}
 
 #pragma mark -
 #pragma mark Memory management

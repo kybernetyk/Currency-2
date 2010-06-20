@@ -10,13 +10,14 @@
 #import "OverviewViewController.h"
 #import "EditListViewController.h"
 #import "Reachability.h"
+#import "RootViewController.h"
 
 
 @interface Currency2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> 
 {
     UIWindow *window;
-    UITabBarController *tabBarController;
 
+	UITabBarController *tabBarController;
 	
 	OverviewViewController *overviewViewController;
 	EditListViewController *editListViewController;

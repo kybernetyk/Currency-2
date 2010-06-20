@@ -49,6 +49,7 @@
 	
 	NSLog(@"pref languages: %@", [NSLocale preferredLanguages]);
 	
+	
 	[self registerUserDefaults];
 	[self setIsOnline: NO];
 	
@@ -59,7 +60,8 @@
 
 	
     // Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
+   [window addSubview:tabBarController.view];
+	
 }
 
 /**
@@ -92,6 +94,16 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
 }
 */
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+	
+	NSLog(@"LOL LOL LOL");
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 
 #pragma mark -
 #pragma mark Reachability

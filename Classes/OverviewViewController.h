@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <iAd/iAd.h>
 
 @interface OverviewViewController : UIViewController 
 {
@@ -15,6 +15,7 @@
 	
 	IBOutlet UITextField *editField;
 	IBOutlet UISegmentedControl *bookmarkBar;
+	IBOutlet ADBannerView *bannerView;
 	
 	UITableView *tableView;
 	
@@ -24,6 +25,14 @@
 	UIImageView *backgroundView;
 #endif
 	UIButton *dotButton;
+	
+	CGRect tableAdVisibleFrame;
+	CGRect tableStandardFrame;	
+
+	CGRect adOffscreenFrame;
+	CGRect adOnscreenFrame;
+	
+	BOOL isBannerVisible;
 }
 
 - (void) updateTableView: (id) sender;
