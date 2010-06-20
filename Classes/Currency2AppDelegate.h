@@ -11,7 +11,6 @@
 #import "EditListViewController.h"
 #import "Reachability.h"
 
-
 @interface Currency2AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> 
 {
     UIWindow *window;

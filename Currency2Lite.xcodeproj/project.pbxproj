@@ -36,6 +36,7 @@
 		038BE9671173AEE300B75B43 /* JSManagedCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BE9661173AEE300B75B43 /* JSManagedCurrency.m */; };
 		038BEA5611745F6E00B75B43 /* JSDataCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 038BEA5511745F6E00B75B43 /* JSDataCore.m */; };
 		0391929911C2455700B85356 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391929811C2455700B85356 /* icon.png */; };
+		03B46E9611CE480F00C41B95 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B46E9511CE480F00C41B95 /* MyTabBarController.m */; };
 		03BAEA2611C50217005B756E /* AddCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */; };
 		03BAEA2711C50217005B756E /* AtomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1011C50217005B756E /* AtomCell.xib */; };
 		03BAEA2811C50217005B756E /* ConversionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BAEA1211C50217005B756E /* ConversionDetailViewController.xib */; };
@@ -119,6 +120,8 @@
 		038BEA5411745F6E00B75B43 /* JSDataCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDataCore.h; sourceTree = "<group>"; };
 		038BEA5511745F6E00B75B43 /* JSDataCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDataCore.m; sourceTree = "<group>"; };
 		0391929811C2455700B85356 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		03B46E9411CE480F00C41B95 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		03B46E9511CE480F00C41B95 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		03BAEA0F11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AddCurrencyViewController.xib; sourceTree = "<group>"; };
 		03BAEA1111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AtomCell.xib; sourceTree = "<group>"; };
 		03BAEA1311C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ConversionDetailViewController.xib; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				033782A3119709CF00FA3744 /* HelpDetailViewController.m */,
 				0337832A1197156B00FA3744 /* MissingCurrencyViewController.h */,
 				0337832B1197156B00FA3744 /* MissingCurrencyViewController.m */,
+				03B46E9411CE480F00C41B95 /* MyTabBarController.h */,
+				03B46E9511CE480F00C41B95 /* MyTabBarController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				03F9F7C5119B0974000CA35E /* SBJsonBase.m in Sources */,
 				03F9F7C6119B0974000CA35E /* SBJsonParser.m in Sources */,
 				03F9F7C7119B0974000CA35E /* SBJsonWriter.m in Sources */,
+				03B46E9611CE480F00C41B95 /* MyTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
