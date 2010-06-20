@@ -158,7 +158,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
 	if (section == 0)
-		return NSLocalizedString(@"Forces Currency 2 to stay offline.",@"");
+		return NSLocalizedString(@"Forces Currency Plus to stay offline.",@"");
 	if (section == 1)
 		return NSLocalizedString(@"The green bar in the main view.",@"");
 	

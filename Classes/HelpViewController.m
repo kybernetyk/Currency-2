@@ -190,7 +190,7 @@
 	{
 		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
 		[hdvc setTitle: NSLocalizedString (@"Offline Mode",@"")];
-		[hdvc setHelpText: NSLocalizedString (@"<center><h2>Offline Mode</h2></center><p>The offline mode forces Currency 2 to stay offline and don't update any exchange rates - even if there is a network connection available.</p><p>This setting is useful if you know that your network connection is really slow or if internet access is blocked. It also helps to save you on roaming fees when you are abroad.</p>",@"offline mode help")];
+		[hdvc setHelpText: NSLocalizedString (@"<center><h2>Offline Mode</h2></center><p>The offline mode forces Currency Plus to stay offline and don't update any exchange rates - even if there is a network connection available.</p><p>This setting is useful if you know that your network connection is really slow or if internet access is blocked. It also helps to save you on roaming fees when you are abroad.</p>",@"offline mode help")];
 		[[self navigationController] pushViewController: hdvc animated: YES];
 		[hdvc release];
 		
@@ -211,7 +211,7 @@
 	{
 		HelpDetailViewController *hdvc = [[HelpDetailViewController alloc] initWithNibName: @"HelpDetailViewController" bundle: nil];
 		[hdvc setTitle: NSLocalizedString (@"Contact Us",@"")];
-		[hdvc setHelpText: NSLocalizedString (@"<center><h2>Contact Us</h2></center><p>Should you experience any issues or problems with Currency 2 don't hesitate to <a href='mailto:support@fluxforge.com?Subject=Currency+2+Support'>send us a mail</a>!</p><p>We will be glad to hear your suggestions and feature requests to improve our apps!",@"contact us help")];
+		[hdvc setHelpText: NSLocalizedString (@"<center><h2>Contact Us</h2></center><p>Should you experience any issues or problems with Currency Plus don't hesitate to <a href='mailto:support@fluxforge.com?Subject=Currency+2+Support'>send us a mail</a>!</p><p>We will be glad to hear your suggestions and feature requests to improve our apps!",@"contact us help")];
 		[[self navigationController] pushViewController: hdvc animated: YES];
 		[hdvc release];
 		

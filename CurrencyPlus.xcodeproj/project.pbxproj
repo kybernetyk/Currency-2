@@ -165,12 +165,12 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Currency2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency2AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Currency2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency2AppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Currency2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* CurrencyPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28A0AB4B0D9B1048005BE974 /* Currency2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency2_Prefix.pch; sourceTree = "<group>"; };
+		28A0AB4B0D9B1048005BE974 /* CurrencyPlus_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyPlus_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Currency2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Currency2-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* CurrencyPlus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CurrencyPlus-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,7 +254,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Currency2.app */,
+				1D6058910D05DD3D006BFB54 /* CurrencyPlus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 				0378E2F811735CB200C783F5 /* AtomTableViewCell.m */,
 				0378E1AD11733EA500C783F5 /* NSString+Additions.h */,
 				0378E1AE11733EA500C783F5 /* NSString+Additions.m */,
-				28A0AB4B0D9B1048005BE974 /* Currency2_Prefix.pch */,
+				28A0AB4B0D9B1048005BE974 /* CurrencyPlus_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				0334609D11A40C990015E835 /* chartslol */,
 			);
@@ -318,7 +318,7 @@
 				0378E19E11733DC300C783F5 /* dotHighlighted.png */,
 				0378E19F11733DC300C783F5 /* dotNormal.png */,
 				0378E1481173395900C783F5 /* coer.xcdatamodel */,
-				8D1107310486CEB800E47090 /* Currency2-Info.plist */,
+				8D1107310486CEB800E47090 /* CurrencyPlus-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -339,9 +339,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Currency2 */ = {
+		1D6058900D05DD3D006BFB54 /* CurrencyPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Currency2" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CurrencyPlus" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -352,9 +352,9 @@
 			);
 			dependencies = (
 			);
-			name = Currency2;
+			name = CurrencyPlus;
 			productName = Currency2;
-			productReference = 1D6058910D05DD3D006BFB54 /* Currency2.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* CurrencyPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -362,14 +362,14 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Currency2" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CurrencyPlus" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Currency2 */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Currency2 */,
+				1D6058900D05DD3D006BFB54 /* CurrencyPlus */,
 			);
 		};
 /* End PBXProject section */
@@ -568,9 +568,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Currency2_Prefix.pch;
-				INFOPLIST_FILE = "Currency2-Info.plist";
-				PRODUCT_NAME = Currency2;
+				GCC_PREFIX_HEADER = CurrencyPlus_Prefix.pch;
+				INFOPLIST_FILE = "CurrencyPlus-Info.plist";
+				PRODUCT_NAME = CurrencyPlus;
 			};
 			name = Distribution;
 		};
@@ -582,9 +582,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Currency2_Prefix.pch;
-				INFOPLIST_FILE = "Currency2-Info.plist";
-				PRODUCT_NAME = Currency2;
+				GCC_PREFIX_HEADER = CurrencyPlus_Prefix.pch;
+				INFOPLIST_FILE = "CurrencyPlus-Info.plist";
+				PRODUCT_NAME = CurrencyPlus;
 			};
 			name = Debug;
 		};
@@ -594,9 +594,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Currency2_Prefix.pch;
-				INFOPLIST_FILE = "Currency2-Info.plist";
-				PRODUCT_NAME = Currency2;
+				GCC_PREFIX_HEADER = CurrencyPlus_Prefix.pch;
+				INFOPLIST_FILE = "CurrencyPlus-Info.plist";
+				PRODUCT_NAME = CurrencyPlus;
 			};
 			name = Release;
 		};
@@ -632,7 +632,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Currency2" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CurrencyPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -642,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Currency2" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CurrencyPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

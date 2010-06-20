@@ -21,7 +21,7 @@
 {
 	if ([[currencyList text] length] <= 0)
 	{
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString (@"No currency specified",@"") message: NSLocalizedString (@"Please enter at least one currency you would like to see in Currency 2",@"") delegate: nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString (@"No currency specified",@"") message: NSLocalizedString (@"Please enter at least one currency you would like to see in Currency Plus",@"") delegate: nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 		[alert show];
 		[alert release];
 		
@@ -31,10 +31,10 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self; 
 	[picker setToRecipients: [NSArray arrayWithObject: @"support@fluxforge.com"]];
-	[picker setSubject: NSLocalizedString (@"Currency 2 - Currency Suggestion",@"email subject")];
+	[picker setSubject: NSLocalizedString (@"Currency Plus - Currency Suggestion",@"email subject")];
 	
 	// Fill out the email body text
-	NSString *emailBody = [NSString stringWithFormat:@"%@ %@\n",NSLocalizedString(@"Hello Flux Forge!\n\nI'd like to see the following currencies added to Currency 2: ",@"email body"),[currencyList text] ];
+	NSString *emailBody = [NSString stringWithFormat:@"%@ %@\n",NSLocalizedString(@"Hello Flux Forge!\n\nI'd like to see the following currencies added to Currency Plus: ",@"email body"),[currencyList text] ];
 	
 	[picker setMessageBody: emailBody isHTML: NO]; // depends. Mostly YES, unless you want to send it as plain text (boring)
 	
