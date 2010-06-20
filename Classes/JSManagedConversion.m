@@ -55,10 +55,27 @@
 
 	tempUpdateData = [[NSMutableData alloc] initWithLength: 0];
 
+	int delay = rand()%5+5;
+	int astarts = [[NSUserDefaults standardUserDefaults] integerForKey: @"appStarts"];
+	
+	if (astarts < 20)
+		delay = 0;
+	
+	NSLog(@"app starts: %i",astarts);
+	
+	[self performSelector: @selector(kickInUpdate:) withObject: self afterDelay: (float) delay];
+	NSLog(@"will perform update in %i secs!", delay);
+}
+
+- (void) kickInUpdate: (id) someArgument
+{
+	NSLog(@"ok! kick update!");
+	
 	NSString *url = [NSString stringWithFormat:@"http://download.finance.yahoo.com/d/quotes.csv?s=%@%@=X&f=l1",[self fromCurrency],[self toCurrency]];
 	NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: url]];
 	
 	[NSURLConnection connectionWithRequest: req delegate: self];
+	
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

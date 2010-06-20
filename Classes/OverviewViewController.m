@@ -187,24 +187,8 @@
 	
 }
 
-- (void) createDefaultDataSet
+- (void) createSetFrom: (NSString *) fromCurrenyISO to: (NSString *) toCurrencyISO withResultsController: (NSFetchedResultsController*) cont
 {
-	/* create default data set */
-	NSLog(@"creating default data set ...");
-	NSError *error = nil;
-	//		[self setFetchedResultsController: [JSCurrencyList currencyListController]];
-	
-	[[JSCurrencyList sharedCurrencyList] createDummyDataSet];
-	
-	
-	
-	NSFetchedResultsController *cont = [JSCurrencyList currencyListController];
-	if (![cont performFetch:&error]) 
-	{
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
 	JSManagedCurrency *fromCurrency = nil;
 	JSManagedCurrency *toCurrency = nil;
 	
@@ -214,9 +198,9 @@
 	{	
 		NSLog(@"currency: %@",currency);
 		
-		if ([[currency ISOCode] isEqualToString: @"EUR"])
+		if ([[currency ISOCode] isEqualToString: fromCurrenyISO])
 			fromCurrency = currency;
-		if ([[currency ISOCode] isEqualToString: @"USD"])
+		if ([[currency ISOCode] isEqualToString: toCurrencyISO])
 			toCurrency = currency;
 	}
 	
@@ -239,6 +223,29 @@
 	[newManagedObject setTC: toCurrency];
 	[newManagedObject setSortOrder: [NSNumber numberWithInteger: 0] ];
 	
+}
+
+- (void) createDefaultDataSet
+{
+	/* create default data set */
+	NSLog(@"creating default data set ...");
+	NSError *error = nil;
+	//		[self setFetchedResultsController: [JSCurrencyList currencyListController]];
+	
+	[[JSCurrencyList sharedCurrencyList] createDummyDataSet];
+	
+	
+	JSDataCore *dataCore = [JSDataCore sharedInstance];	
+	NSFetchedResultsController *cont = [JSCurrencyList currencyListController];
+	if (![cont performFetch:&error]) 
+	{
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	[self createSetFrom: @"EUR" to: @"USD" withResultsController: cont];
+	[self createSetFrom: @"GBP" to: @"USD" withResultsController: cont];
+	[self createSetFrom: @"USD" to: @"JPY" withResultsController: cont];
 	
 	// Save the context.
 	if (![[dataCore managedObjectContext] save:&error]) 

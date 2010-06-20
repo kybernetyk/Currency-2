@@ -9,7 +9,7 @@
     #import <UIKit/UIKit.h>
     #import <CoreData/CoreData.h>
 	#import "UITabBarController+rotationfix.h"
-	#define NSLog(format, ...)
+//	#define NSLog(format, ...)
 #endif
 
 //#define CUSTOM_GRAPHICS

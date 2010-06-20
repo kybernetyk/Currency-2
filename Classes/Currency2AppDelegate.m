@@ -35,6 +35,7 @@
 						 [NSNumber numberWithDouble: 19.95], @"bookmark1",
  						 [NSNumber numberWithDouble: 49.95], @"bookmark2",
 						 [NSNumber numberWithDouble: 79.95], @"bookmark3",
+						 [NSNumber numberWithInt: 0], @"appStarts",
 						 [NSNumber numberWithBool: YES], @"firstStart",		//status to check if the app was launched for the first time -> create default data
 						 nil];
 	
@@ -58,6 +59,11 @@
 	reachability = [[Reachability reachabilityWithHostName: @"download.finance.yahoo.com"] retain];
 	[reachability startNotifer];
 
+	int astarts = [[NSUserDefaults standardUserDefaults] integerForKey: @"appStarts"];
+	astarts ++;
+	[[NSUserDefaults standardUserDefaults] setInteger: astarts forKey: @"appStarts"];
+	
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	
     // Add the tab bar controller's current view as a subview of the window
    [window addSubview:tabBarController.view];

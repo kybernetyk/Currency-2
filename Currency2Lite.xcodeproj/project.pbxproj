@@ -122,6 +122,7 @@
 		0391929811C2455700B85356 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		03B46E9411CE480F00C41B95 /* UITabBarController+rotationfix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+rotationfix.h"; sourceTree = "<group>"; };
 		03B46E9511CE480F00C41B95 /* UITabBarController+rotationfix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+rotationfix.m"; sourceTree = "<group>"; };
+		03B46F3011CE4D5D00C41B95 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		03BAEA0F11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AddCurrencyViewController.xib; sourceTree = "<group>"; };
 		03BAEA1111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AtomCell.xib; sourceTree = "<group>"; };
 		03BAEA1311C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ConversionDetailViewController.xib; sourceTree = "<group>"; };
@@ -132,8 +133,6 @@
 		03BAEA1F11C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MissingCurrencyViewController.xib; sourceTree = "<group>"; };
 		03BAEA2111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
 		03BAEA2511C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
-		03BAEA4311C5028A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		03BAEA5011C5034C005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
 		03BAEA5211C5036A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		03BAEA5311C50376005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/HelpDetailViewController.xib; sourceTree = "<group>"; };
 		03BAEA5411C50383005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/EditListViewController.xib; sourceTree = "<group>"; };
@@ -513,7 +512,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				03BAEA1D11C50217005B756E /* English */,
-				03BAEA4311C5028A005B756E /* German */,
+				03B46F3011CE4D5D00C41B95 /* German */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
@@ -531,7 +530,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				03BAEA2111C50217005B756E /* English */,
-				03BAEA5011C5034C005B756E /* German */,
 			);
 			name = OverviewViewController.xib;
 			sourceTree = "<group>";
@@ -563,6 +561,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jaroslaw Szpilewski";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jaroslaw Szpilewski";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -617,6 +617,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jaroslaw Szpilewski (VA9G2X54KZ)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
