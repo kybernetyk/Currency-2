@@ -655,11 +655,13 @@
 {
     // Optional Formatting if you don't handle it from the control itself
 	
+	NSString *newTitle = [NSString stringWithFormat: @"%@", [controller returnValue]];
+
 	double ret = [[controller returnValue] doubleValue];
 	if (ret <= 0.0)
-		ret = 1.0;
-	
-	NSString *newTitle = [NSString stringWithFormat:@"%.2f", ret];
+		newTitle = @"1.0";
+
+	newTitle = [newTitle stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @"."]];
 		
 	[editButton setTitle: newTitle forState: UIControlStateNormal];
 	

@@ -21,7 +21,6 @@
 	UITextField *currentTextField;
 	
 	UIBarButtonItem *doneEditingButton;
-	UIButton *dotButton;
 }
 
 - (void) saveBookmarks;

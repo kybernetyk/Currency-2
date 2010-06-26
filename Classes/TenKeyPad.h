@@ -16,12 +16,15 @@
 	NSMutableString *returnValue;
 	IBOutlet UILabel *totalLabel;
 	
+	IBOutlet UIButton *doneButton;
+	
 	double initValue;
 }
 
 @property (nonatomic, assign) id <TenKeyPadDelegate> delegate;
 @property (nonatomic, retain) NSMutableString *returnValue;
 @property (nonatomic, retain) IBOutlet UILabel *totalLabel;
+@property (nonatomic, retain) IBOutlet UIButton *doneButton;
 
 - (id) initWithNumber: (NSNumber *)initNumber;
 

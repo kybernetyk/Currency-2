@@ -8,7 +8,7 @@
 #import "NSString+Additions.h"
 
 @implementation TenKeyPad
-@synthesize delegate, returnValue, totalLabel;
+@synthesize delegate, returnValue, totalLabel, doneButton;
 
 - (id) initWithNumber: (NSNumber *)initNumber
 {
@@ -24,6 +24,19 @@
 	// You may wish to format the NSMutableString here instead of updating whatever the string currently holds
 	// IE: totalLabel.text = [
 	totalLabel.text = returnValue;
+	//NSLog(@"lol: %@", [self doneButton]);
+	
+	if ([returnValue length] <= 0)
+	{	
+		[doneButton setEnabled: NO];
+	//	[doneButton setHidden: YES];
+	}
+	else
+	{
+		[doneButton setEnabled: YES];
+	//	[doneButton setHidden: NO];
+	}
+		
 }
 
 // Append Method
@@ -115,12 +128,34 @@
 // Standard Methods
 - (void)viewDidLoad 
 {
-	returnValue = [[NSMutableString alloc] initWithFormat:@"%.2f", initValue];
-	
+	returnValue = [[NSMutableString alloc] initWithFormat:@"%f", initValue];
+
+	NSString *bla = [NSString stringWithFormat: @"%f", initValue];
+	if ([bla containsString: @"." ignoringCase: YES])
+	{
+		//let's count the nachkommastellen
+		bla = [bla stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @"0"]];
+		const char *lolhack = [bla cStringUsingEncoding: NSUTF8StringEncoding];
+		char *pstr = lolhack;
+		while (1)
+		{
+			if (*pstr == 0 || *pstr++ == '.') //1. get *pstr / 2. compare it / increment pstr
+				break;
+		}
+		int lolcount = strlen(pstr);
+		
+		NSString *format = [NSString stringWithFormat: @"%%.%if", lolcount];
+		[returnValue release];
+		returnValue = [[NSMutableString alloc] initWithFormat:format, initValue];
+		
+		//printf("\npstr: '%s' count: %i\n", pstr, lolcount);
+	}
 	// Initial Value of returnValue which is blank
 //	returnValue = [[NSMutableString alloc] initWithString:@""];
 	[self updateLabel];
 	[super viewDidLoad];
+	
+	NSLog(@"done button: %@",doneButton);
 }
 
 

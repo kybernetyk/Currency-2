@@ -113,7 +113,6 @@
 		036FF62411D62AED006D9F1F /* TenKeyPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenKeyPad.h; sourceTree = "<group>"; };
 		036FF62511D62AED006D9F1F /* TenKeyPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenKeyPad.m; sourceTree = "<group>"; };
 		036FF62711D62AF6006D9F1F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TenKeyPad.xib; sourceTree = "<group>"; };
-		036FF76611D638BA006D9F1F /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/TenKeyPad.xib; sourceTree = "<group>"; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		0378E1151173307C00C783F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -488,7 +487,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				036FF62711D62AF6006D9F1F /* English */,
-				036FF76611D638BA006D9F1F /* German */,
 			);
 			name = TenKeyPad.xib;
 			sourceTree = "<group>";
