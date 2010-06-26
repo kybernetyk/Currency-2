@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TenKeyPad.h"
 
 @interface OverviewViewController : UIViewController 
 {
 	NSFetchedResultsController *fetchedResultsController;
 	
 	IBOutlet UITextField *editField;
+	IBOutlet UIButton *editButton;
+	//UILabel *editLabel;
 	IBOutlet UISegmentedControl *bookmarkBar;
 	
 	UITableView *tableView;
@@ -23,13 +25,13 @@
 #ifdef CUSTOM_GRAPHICS
 	UIImageView *backgroundView;
 #endif
-	UIButton *dotButton;
 }
 
 - (void) updateTableView: (id) sender;
 - (void) updateRates;
 
 - (IBAction) bookmarkPressed: (id) sender;
+- (IBAction) showKeypadView: (id) sender;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, assign) IBOutlet UITableView *tableView;

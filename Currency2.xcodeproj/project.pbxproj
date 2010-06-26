@@ -20,6 +20,15 @@
 		033783F21197239500FA3744 /* 79-medical-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F11197239500FA3744 /* 79-medical-bag.png */; };
 		033783F4119723A700FA3744 /* 84-lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F3119723A700FA3744 /* 84-lightbulb.png */; };
 		033783F6119723B600FA3744 /* 90-lifebuoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 033783F5119723B600FA3744 /* 90-lifebuoy.png */; };
+		036FF61D11D62AE1006D9F1F /* BGTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61611D62AE1006D9F1F /* BGTop.png */; };
+		036FF61E11D62AE1006D9F1F /* ButtonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61711D62AE1006D9F1F /* ButtonBack.png */; };
+		036FF61F11D62AE1006D9F1F /* ButtonBackSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61811D62AE1006D9F1F /* ButtonBackSelected.png */; };
+		036FF62011D62AE1006D9F1F /* ButtonBGNumbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61911D62AE1006D9F1F /* ButtonBGNumbers.png */; };
+		036FF62111D62AE1006D9F1F /* ButtonBGNumbersSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61A11D62AE1006D9F1F /* ButtonBGNumbersSelected.png */; };
+		036FF62211D62AE1006D9F1F /* ButtonGBDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61B11D62AE1006D9F1F /* ButtonGBDot.png */; };
+		036FF62311D62AE1006D9F1F /* ButtonGBDotSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 036FF61C11D62AE1006D9F1F /* ButtonGBDotSelected.png */; };
+		036FF62611D62AED006D9F1F /* TenKeyPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 036FF62511D62AED006D9F1F /* TenKeyPad.m */; };
+		036FF76511D638AF006D9F1F /* TenKeyPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036FF76411D638AF006D9F1F /* TenKeyPad.xib */; };
 		0378E0D711732FCE00C783F5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378E0D511732FCE00C783F5 /* OverviewViewController.m */; };
 		0378E1161173307C00C783F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378E1151173307C00C783F5 /* CoreData.framework */; };
 		0378E1491173395900C783F5 /* coer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0378E1481173395900C783F5 /* coer.xcdatamodel */; };
@@ -94,6 +103,17 @@
 		033783F11197239500FA3744 /* 79-medical-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "79-medical-bag.png"; sourceTree = "<group>"; };
 		033783F3119723A700FA3744 /* 84-lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "84-lightbulb.png"; sourceTree = "<group>"; };
 		033783F5119723B600FA3744 /* 90-lifebuoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-lifebuoy.png"; sourceTree = "<group>"; };
+		036FF61611D62AE1006D9F1F /* BGTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTop.png; sourceTree = "<group>"; };
+		036FF61711D62AE1006D9F1F /* ButtonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBack.png; sourceTree = "<group>"; };
+		036FF61811D62AE1006D9F1F /* ButtonBackSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackSelected.png; sourceTree = "<group>"; };
+		036FF61911D62AE1006D9F1F /* ButtonBGNumbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBGNumbers.png; sourceTree = "<group>"; };
+		036FF61A11D62AE1006D9F1F /* ButtonBGNumbersSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBGNumbersSelected.png; sourceTree = "<group>"; };
+		036FF61B11D62AE1006D9F1F /* ButtonGBDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonGBDot.png; sourceTree = "<group>"; };
+		036FF61C11D62AE1006D9F1F /* ButtonGBDotSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonGBDotSelected.png; sourceTree = "<group>"; };
+		036FF62411D62AED006D9F1F /* TenKeyPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenKeyPad.h; sourceTree = "<group>"; };
+		036FF62511D62AED006D9F1F /* TenKeyPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenKeyPad.m; sourceTree = "<group>"; };
+		036FF62711D62AF6006D9F1F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TenKeyPad.xib; sourceTree = "<group>"; };
+		036FF76611D638BA006D9F1F /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/TenKeyPad.xib; sourceTree = "<group>"; };
 		0378E0D411732FCE00C783F5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		0378E0D511732FCE00C783F5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		0378E1151173307C00C783F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -128,7 +148,6 @@
 		03BAEA2111C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
 		03BAEA2511C50217005B756E /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		03BAEA4311C5028A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		03BAEA5011C5034C005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/OverviewViewController.xib; sourceTree = "<group>"; };
 		03BAEA5211C5036A005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		03BAEA5311C50376005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/HelpDetailViewController.xib; sourceTree = "<group>"; };
 		03BAEA5411C50383005B756E /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/EditListViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +245,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				036FF62411D62AED006D9F1F /* TenKeyPad.h */,
+				036FF62511D62AED006D9F1F /* TenKeyPad.m */,
 				038BE9641173AEC200B75B43 /* Managed Objects */,
 				1D3623240D0F684500981E51 /* Currency2AppDelegate.h */,
 				1D3623250D0F684500981E51 /* Currency2AppDelegate.m */,
@@ -291,6 +312,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				036FF76411D638AF006D9F1F /* TenKeyPad.xib */,
+				036FF61611D62AE1006D9F1F /* BGTop.png */,
+				036FF61711D62AE1006D9F1F /* ButtonBack.png */,
+				036FF61811D62AE1006D9F1F /* ButtonBackSelected.png */,
+				036FF61911D62AE1006D9F1F /* ButtonBGNumbers.png */,
+				036FF61A11D62AE1006D9F1F /* ButtonBGNumbersSelected.png */,
+				036FF61B11D62AE1006D9F1F /* ButtonGBDot.png */,
+				036FF61C11D62AE1006D9F1F /* ButtonGBDotSelected.png */,
 				03BAEA9B11C50B0E005B756E /* Localizable.strings */,
 				03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */,
 				03BAEA1011C50217005B756E /* AtomCell.xib */,
@@ -406,6 +435,14 @@
 				03BAEA2F11C50217005B756E /* OverviewViewController.xib in Resources */,
 				03BAEA3111C50217005B756E /* SettingsViewController.xib in Resources */,
 				03BAEA9D11C50B0E005B756E /* Localizable.strings in Resources */,
+				036FF61D11D62AE1006D9F1F /* BGTop.png in Resources */,
+				036FF61E11D62AE1006D9F1F /* ButtonBack.png in Resources */,
+				036FF61F11D62AE1006D9F1F /* ButtonBackSelected.png in Resources */,
+				036FF62011D62AE1006D9F1F /* ButtonBGNumbers.png in Resources */,
+				036FF62111D62AE1006D9F1F /* ButtonBGNumbersSelected.png in Resources */,
+				036FF62211D62AE1006D9F1F /* ButtonGBDot.png in Resources */,
+				036FF62311D62AE1006D9F1F /* ButtonGBDotSelected.png in Resources */,
+				036FF76511D638AF006D9F1F /* TenKeyPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,12 +477,22 @@
 				03F9F7C5119B0974000CA35E /* SBJsonBase.m in Sources */,
 				03F9F7C6119B0974000CA35E /* SBJsonParser.m in Sources */,
 				03F9F7C7119B0974000CA35E /* SBJsonWriter.m in Sources */,
+				036FF62611D62AED006D9F1F /* TenKeyPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		036FF76411D638AF006D9F1F /* TenKeyPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036FF62711D62AF6006D9F1F /* English */,
+				036FF76611D638BA006D9F1F /* German */,
+			);
+			name = TenKeyPad.xib;
+			sourceTree = "<group>";
+		};
 		03BAEA0E11C50217005B756E /* AddCurrencyViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -521,7 +568,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				03BAEA2111C50217005B756E /* English */,
-				03BAEA5011C5034C005B756E /* German */,
 			);
 			name = OverviewViewController.xib;
 			sourceTree = "<group>";
@@ -558,7 +604,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "6B617F02-1379-41DA-8DD9-0157A87C2C1C";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6B617F02-1379-41DA-8DD9-0157A87C2C1C";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Distribution;
 		};
@@ -611,7 +657,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC73EE3-9982-4311-A456-5E5B6F7639F5";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -625,7 +671,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC73EE3-9982-4311-A456-5E5B6F7639F5";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

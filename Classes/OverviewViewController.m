@@ -42,21 +42,29 @@
 	NSString *theTitle = [sender titleForSegmentAtIndex: index];
 	
 	//NSLog(@"%@",theTitle) ;
-	[editField setText: theTitle];
+	//[editField setText: theTitle];
+	//[editLabel setText: theTitle];
+	[editButton setTitle: theTitle forState: UIControlStateNormal];
 
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
 	
-	if ([[editField text] length] <= 0)
+	//if ([[editField text] length] <= 0)
+//	if ([[editLabel text] length] <= 0)
+	if ([[[editButton titleLabel] text] length] <= 0)
 	{
 		NSNumber *num = [defs objectForKey: @"defaultUserInput"];
-		[editField setText: [NSString stringWithFormat: @"%@",num]];
+	//	[editField setText: [NSString stringWithFormat: @"%@",num]];
+		//[editLabel setText: [NSString stringWithFormat: @"%@",num]];
+		[editButton setTitle: [NSString stringWithFormat: @"%@",num] forState: UIControlStateNormal];
 	}
 	
 	[self updateTableView: self];
 	
-	NSNumber *num = [NSNumber numberWithDouble: [[editField text] doubleValue]];
+//	NSNumber *num = [NSNumber numberWithDouble: [[editField text] doubleValue]];
+	NSNumber *num = [NSNumber numberWithDouble: [[[editButton titleLabel] text] doubleValue]];
 	[defs setObject: num forKey: @"lastUserInput"];
 
+	[defs synchronize];
 }
 
 - (void) updateRates
@@ -67,6 +75,82 @@
 	}
 	[[self tableView] reloadData];
 }
+
+#pragma mark -
+#pragma mark def dataset
+
+- (void) createSetFrom: (NSString *) fromCurrenyISO to: (NSString *) toCurrencyISO withResultsController: (NSFetchedResultsController*) cont
+{
+	JSManagedCurrency *fromCurrency = nil;
+	JSManagedCurrency *toCurrency = nil;
+	
+	NSLog(@"currencies in list: %i",[[cont fetchedObjects] count]);
+	
+	for (JSManagedCurrency *currency in [cont fetchedObjects])
+	{	
+		NSLog(@"currency: %@",currency);
+		
+		if ([[currency ISOCode] isEqualToString: fromCurrenyISO])
+			fromCurrency = currency;
+		if ([[currency ISOCode] isEqualToString: toCurrencyISO])
+			toCurrency = currency;
+	}
+	
+	
+	JSDataCore *dataCore = [JSDataCore sharedInstance];	
+	JSManagedConversion *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName: @"Conversion" 
+																		  inManagedObjectContext: [dataCore managedObjectContext]];
+	
+	// If appropriate, configure the new managed object.
+	//	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+	
+	NSDecimalNumber *num = [NSDecimalNumber decimalNumberWithString: @"1.0"];
+	
+	[newManagedObject setTimeStamp: [NSDate date]];
+	[newManagedObject setFromCurrency: [fromCurrency ISOCode]];
+	[newManagedObject setToCurrency: [toCurrency ISOCode]];
+	[newManagedObject setConversionRatio: num];
+	
+	[newManagedObject setFC: fromCurrency];
+	[newManagedObject setTC: toCurrency];
+	[newManagedObject setSortOrder: [NSNumber numberWithInteger: 0] ];
+	
+}
+
+- (void) createDefaultDataSet
+{
+	/* create default data set */
+	NSLog(@"creating default data set ...");
+	NSError *error = nil;
+	//		[self setFetchedResultsController: [JSCurrencyList currencyListController]];
+	
+	[[JSCurrencyList sharedCurrencyList] createDummyDataSet];
+	
+	
+	JSDataCore *dataCore = [JSDataCore sharedInstance];	
+	NSFetchedResultsController *cont = [JSCurrencyList currencyListController];
+	if (![cont performFetch:&error]) 
+	{
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	[self createSetFrom: @"EUR" to: @"USD" withResultsController: cont];
+	[self createSetFrom: @"GBP" to: @"USD" withResultsController: cont];
+	[self createSetFrom: @"USD" to: @"JPY" withResultsController: cont];
+	
+	// Save the context.
+	if (![[dataCore managedObjectContext] save:&error]) 
+	{
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	
+	/*    */
+	
+}
+
 
 
 #pragma mark -
@@ -96,6 +180,7 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+
 	
 	// Set up the edit and add buttons.
 	//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -115,12 +200,16 @@
 		
 	//load last user input
 	NSNumber *num = [defs objectForKey: @"lastUserInput"];
-	[editField setText: [NSString stringWithFormat: @"%@", num]];
+//	/[editField setText: [NSString stringWithFormat: @"%@", num]];
+//	[editLabel setText: [NSString stringWithFormat: @"%@",num]];
+	[editButton setTitle: [NSString stringWithFormat: @"%@",num] forState: UIControlStateNormal];
 
 
 	[self buildBookmarkBar];
 	
-	[[self navigationItem] setTitleView: editField];
+//	[[self navigationItem] setTitleView: editField];
+	[[self navigationItem] setTitleView: editButton];
+
 	
 	
 	NSLog(@"my retcount %i",[self retainCount]);
@@ -159,76 +248,14 @@
 		[defs setBool: NO forKey: @"firstStart"];
 		
 		[self createDefaultDataSet];
+		
+		[defs synchronize];
 	}
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRates) name: @"watchlistDidChange" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
 }
 
-- (void) createDefaultDataSet
-{
-	/* create default data set */
-	NSLog(@"creating default data set ...");
-	NSError *error = nil;
-	//		[self setFetchedResultsController: [JSCurrencyList currencyListController]];
-	
-	[[JSCurrencyList sharedCurrencyList] createDummyDataSet];
-	
-	
-	
-	NSFetchedResultsController *cont = [JSCurrencyList currencyListController];
-	if (![cont performFetch:&error]) 
-	{
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
-	JSManagedCurrency *fromCurrency = nil;
-	JSManagedCurrency *toCurrency = nil;
-	
-	NSLog(@"currencies in list: %i",[[cont fetchedObjects] count]);
-	
-	for (JSManagedCurrency *currency in [cont fetchedObjects])
-	{	
-		NSLog(@"currency: %@",currency);
-		
-		if ([[currency ISOCode] isEqualToString: @"EUR"])
-			fromCurrency = currency;
-		if ([[currency ISOCode] isEqualToString: @"USD"])
-			toCurrency = currency;
-	}
-	
-	
-	JSDataCore *dataCore = [JSDataCore sharedInstance];	
-	JSManagedConversion *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName: @"Conversion" 
-																		  inManagedObjectContext: [dataCore managedObjectContext]];
-	
-	// If appropriate, configure the new managed object.
-	//	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-	
-	NSDecimalNumber *num = [NSDecimalNumber decimalNumberWithString: @"1.0"];
-	
-	[newManagedObject setTimeStamp: [NSDate date]];
-	[newManagedObject setFromCurrency: [fromCurrency ISOCode]];
-	[newManagedObject setToCurrency: [toCurrency ISOCode]];
-	[newManagedObject setConversionRatio: num];
-	
-	[newManagedObject setFC: fromCurrency];
-	[newManagedObject setTC: toCurrency];
-	[newManagedObject setSortOrder: [NSNumber numberWithInteger: 0] ];
-	
-	
-	// Save the context.
-	if (![[dataCore managedObjectContext] save:&error]) 
-	{
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
-	
-	/*    */
-	
-}
 
 - (void) defaultsDidChange: (NSNotification *) aNotification
 {
@@ -252,6 +279,7 @@
 	// Register to Recieve notifications of the Decimal Key Being Pressed and when it is pressed do the corresponding addDecimal action.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDecimal:) name:@"DecimalPressed" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+
 	
 #ifdef CUSTOM_GRAPHICS	
 	[self.tableView.superview insertSubview: backgroundView belowSubview: self.tableView];
@@ -382,8 +410,12 @@
 	
 	
     
-	if ([[editField text] length] == 0 ||
-		[[editField text] floatValue] == 0.0)
+//	if ([[editField text] length] == 0 ||
+//		[[editField text] floatValue] == 0.0)
+//	if ([[editLabel text] length] == 0 ||
+//		[[editLabel text] floatValue] == 0.0)
+	if ([[[editButton titleLabel] text] length] == 0 ||
+		[[[editButton titleLabel] text] floatValue] == 0.0)
 	{
 		[cell setText1:NSLocalizedString(@"Wrong input!",@"wrong input")];
 		[cell setText2:NSLocalizedString(@"Conversion not possible.",@"conversion not possible")];	
@@ -401,7 +433,8 @@
 	
 	//float input = [[editField text] floatValue];
 //	start = [[NSDate date] timeIntervalSince1970];
-	NSDecimalNumber *input = [NSDecimalNumber decimalNumberWithString: [editField text]];
+//	NSDecimalNumber *input = [NSDecimalNumber decimalNumberWithString: [editField text]];
+	NSDecimalNumber *input = [NSDecimalNumber decimalNumberWithString: [[editButton titleLabel] text]];
 	NSDecimalNumber *conversionRatio = [managedObject conversionRatio]; 
 
 	if ([conversionRatio isEqual: [NSDecimalNumber notANumber]] ||
@@ -425,7 +458,9 @@
 	
 	short theScale = 4;
 	
-	if ([[editField text] floatValue] >= 10.0f)
+//	if ([[editField text] floatValue] >= 10.0f)
+	if ([[[editButton titleLabel] text] floatValue] >= 10.0f)
+	
 		theScale = 2;
 
 //	start = [[NSDate date] timeIntervalSince1970];
@@ -604,134 +639,38 @@
 #pragma mark -
 #pragma mark keyboard
 
-- (void) hideKeypad: (id) sender
-{
-	[editField resignFirstResponder];
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"willHideKeyboard" object: nil];
-	
-	
-	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
-
-	if ([[editField text] length] <= 0)
-	{
-		NSNumber *num = [defs objectForKey: @"defaultUserInput"];
-		[editField setText: [NSString stringWithFormat: @"%@",num]];
-	}
-
-	NSNumber *num = [NSNumber numberWithDouble: [[editField text] doubleValue]];
-	[defs setObject: num forKey: @"lastUserInput"];
-}
-
-
 // This function is called each time the keyboard is shown
-- (void)keyboardWillShow:(NSNotification *)note 
+
+- (void) showKeypadView: (id) sender
 {
+	double d = [[[editButton titleLabel] text] doubleValue];
 	
-	//NSLog(@"keyboard will show ...");
+	TenKeyPad *other = [[TenKeyPad alloc] initWithNumber: [NSNumber numberWithDouble: d]];
+    other.delegate = self;
+    [self presentModalViewController:other animated:YES];
+    [other release];
+}
+
+- (void)tenKeyPadDidFinish:(TenKeyPad *) controller
+{
+    // Optional Formatting if you don't handle it from the control itself
 	
-	// Just used to reference windows of our application while we iterate though them
-	UIWindow* tempWindow;
+	double ret = [[controller returnValue] doubleValue];
+	if (ret <= 0.0)
+		ret = 1.0;
 	
-	// Because we cant get access to the UIKeyboard throught the SDK we will just use UIView. 
-	// UIKeyboard is a subclass of UIView anyways
-	UIView* keyboard;
-	
-	// Check each window in our application
-	for(int c = 0; c < [[[UIApplication sharedApplication] windows] count]; c ++)
-	{
-		// Get a reference of the current window
-		tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:c];
+	NSString *newTitle = [NSString stringWithFormat:@"%.2f", ret];
 		
-		// Loop through all views in the current window
-		for(int i = 0; i < [tempWindow.subviews count]; i++)
-		{
-			// Get a reference to the current view
-			keyboard = [tempWindow.subviews objectAtIndex:i];
-			
-			// From all the apps i have made, they keyboard view description always starts with <UIKeyboard so I did the following
-			if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-			{
-			//	NSLog(@"found keyboard: %@",[keyboard description]);
-				
-				// First test to see if the button has been created before.  If not, create the button.
-				if (dotButton == nil) 
-				{			
-					dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
-				}
-				
-				// Position the button - I found these numbers align fine (0, 0 = top left of keyboard)
-				dotButton.frame = CGRectMake(0, 163, 106, 53);
-				
-				// Add images to our button so that it looks just like a native UI Element.
-				[dotButton setImage:[UIImage imageNamed:@"dotNormal.png"] forState:UIControlStateNormal];
-				[dotButton setImage:[UIImage imageNamed:@"dotHighlighted.png"] forState:UIControlStateHighlighted];
-				
-				
-				// Add the button to the keyboard
-				[keyboard addSubview: dotButton];
-				// Set the button to hidden. We will only unhide it when we need it.
-				dotButton.hidden = YES;
-				
-				// When the decimal button is pressed, we send a message to ourself (the AppDelegate) which will then post a notification that will then append a decimal in the UITextField in the Appropriate View Controller.
-				[dotButton addTarget:self action:@selector(sendDecimal:)  forControlEvents:UIControlEventTouchUpInside];
-				
-				return;
-			}
-		}
-	}
-}
+	[editButton setTitle: newTitle forState: UIControlStateNormal];
+	
+	[self updateTableView: self];
 
-- (void)sendDecimal:(id)sender 
-{
-	// Post a Notification that the Decimal Key was Pressed.
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"DecimalPressed" object:nil];	
-}
-
-
-
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField 
-{
-//	NSLog(@"textFieldDidBeginEditing");
-//	currentTextField = textField;
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+	NSNumber *num = [NSNumber numberWithDouble: [[[editButton titleLabel] text] doubleValue]];
+	[defs setObject: num forKey: @"lastUserInput"];
+//	[defs synchronize];
 	
-	
-//	if (textField != unitsTextField)
-		[dotButton setHidden: NO];
-	
-	//self.navigationItem.rightBarButtonItem = addButton;
-	
-	[[self navigationItem] setRightBarButtonItem: doneEditingButton];
-	
-	/*	// We need to access the dot Button declared in the Delegate.
-	 ExampleAppDelegate *appDelegate = (ExampleAppDelegate *)[[UIApplication sharedApplication] delegate];
-	 // Only if we are editing within the Number Pad Text Field do we want the dot.
-	 if (numericTextField.editing) {
-	 // Show the Dot.
-	 appDelegate.dot.hidden = NO;
-	 } else {
-	 // Otherwise, Hide the Dot.
-	 appDelegate.dot.hidden = YES;
-	 }*/
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-//	currentTextField = nil;
-	[[self navigationItem] setRightBarButtonItem: editListButton];
-	[dotButton setHidden: YES];
-}
-
-- (void)addDecimal:(NSNotification *)notification 
-{
-	//NSLog(@"add decimal!");
-	
-	
-	if (![[editField text] containsString: @"."])
-		[editField setText: [[editField text] stringByAppendingString: @"."]];
-	
-	// Apend the Decimal to the TextField.
-	//	numericTextField.text = [numericTextField.text stringByAppendingString:@"."];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 

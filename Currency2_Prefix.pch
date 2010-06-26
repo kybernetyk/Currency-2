@@ -8,7 +8,6 @@
     #import <UIKit/UIKit.h>
     #import <CoreData/CoreData.h>
 
-	#define NSLog(format, ...)
 #endif
 
 //#define CUSTOM_GRAPHICS
