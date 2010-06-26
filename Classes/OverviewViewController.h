@@ -24,7 +24,6 @@
 #ifdef CUSTOM_GRAPHICS
 	UIImageView *backgroundView;
 #endif
-	UIButton *dotButton;
 	
 	CGRect tableAdVisibleFrame;
 	CGRect tableStandardFrame;	

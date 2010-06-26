@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="8"/>
 			<integer value="22"/>
+			<integer value="8"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -63,7 +63,9 @@
 				<float key="IBUIMinimumFontSize">17</float>
 				<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 					<int key="IBUIAutocorrectionType">1</int>
-					<int key="IBUIKeyboardType">4</int>
+					<int key="IBUIKeyboardType">2</int>
+					<int key="IBUIReturnKeyType">9</int>
+					<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				</object>
 			</object>

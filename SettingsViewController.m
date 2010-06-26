@@ -57,7 +57,9 @@
 		[bmt setText: @"auto generated"];
 		[bmt setClearsOnBeginEditing: NO];
 		[bmt setClearButtonMode: UITextFieldViewModeAlways];
-		[bmt setKeyboardType: UIKeyboardTypeNumberPad];
+		[bmt setKeyboardType: UIKeyboardTypeNumbersAndPunctuation];
+		[bmt setEnablesReturnKeyAutomatically: YES];
+		[bmt setReturnKeyType: UIReturnKeyDone];
 //		[bmt addTarget: self action: @selector(textFieldDidBeginEditing:) forControlEvents: UIControlEventEditingDidBegin];
 //		[bmt addTarget: self action: @selector(textFieldDidEndEditing:) forControlEvents: UIControlEventEditingDidEnd];
 		[bmt setDelegate: self];
@@ -68,6 +70,12 @@
 	doneEditingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeypad:)];
 }
 
+- (BOOL) textFieldShouldReturn: (UITextField *)textField
+{
+	[self hideKeypad: self];
+	[textField resignFirstResponder];
+	return YES;
+}
 
 
 - (void)viewWillAppear:(BOOL)animated 

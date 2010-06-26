@@ -278,9 +278,6 @@
 //	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(UIKeyboardWillHideNotification:) name:@"willHideKeyboard" object:nil];
 
 	
-	// Register to Recieve notifications of the Decimal Key Being Pressed and when it is pressed do the corresponding addDecimal action.
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDecimal:) name:@"DecimalPressed" object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	
 #ifdef CUSTOM_GRAPHICS	
 	[self.tableView.superview insertSubview: backgroundView belowSubview: self.tableView];
@@ -315,9 +312,6 @@
 	//[[NSNotificationCenter defaultCenter] removeObserver: self name: UIKeyboardWillShowNotification object:nil];
 	//[[NSNotificationCenter defaultCenter] removeObserver: self name: @"willHideKeyboard" object:nil];	
 
-	[[NSNotificationCenter defaultCenter] removeObserver: self name: @"DecimalPressed" object: nil];
-	[[NSNotificationCenter defaultCenter] removeObserver: self name: UIKeyboardWillShowNotification object: nil];
-	
 	[super viewWillDisappear:animated];
 }
 
@@ -646,6 +640,11 @@
  */
 #pragma mark -
 #pragma mark keyboard
+- (BOOL) textFieldShouldReturn: (UITextField *)textField
+{
+	[self hideKeypad: self];
+	return YES;
+}
 
 - (void) hideKeypad: (id) sender
 {
@@ -666,70 +665,6 @@
 }
 
 
-// This function is called each time the keyboard is shown
-- (void)keyboardWillShow:(NSNotification *)note 
-{
-	
-	//NSLog(@"keyboard will show ...");
-	
-	// Just used to reference windows of our application while we iterate though them
-	UIWindow* tempWindow;
-	
-	// Because we cant get access to the UIKeyboard throught the SDK we will just use UIView. 
-	// UIKeyboard is a subclass of UIView anyways
-	UIView* keyboard;
-	
-	// Check each window in our application
-	for(int c = 0; c < [[[UIApplication sharedApplication] windows] count]; c ++)
-	{
-		// Get a reference of the current window
-		tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:c];
-		
-		// Loop through all views in the current window
-		for(int i = 0; i < [tempWindow.subviews count]; i++)
-		{
-			// Get a reference to the current view
-			keyboard = [tempWindow.subviews objectAtIndex:i];
-			
-			// From all the apps i have made, they keyboard view description always starts with <UIKeyboard so I did the following
-			if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-			{
-			//	NSLog(@"found keyboard: %@",[keyboard description]);
-				
-				// First test to see if the button has been created before.  If not, create the button.
-				if (dotButton == nil) 
-				{			
-					dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
-				}
-				
-				// Position the button - I found these numbers align fine (0, 0 = top left of keyboard)
-				dotButton.frame = CGRectMake(0, 163, 106, 53);
-				
-				// Add images to our button so that it looks just like a native UI Element.
-				[dotButton setImage:[UIImage imageNamed:@"dotNormal.png"] forState:UIControlStateNormal];
-				[dotButton setImage:[UIImage imageNamed:@"dotHighlighted.png"] forState:UIControlStateHighlighted];
-				
-				
-				// Add the button to the keyboard
-				[keyboard addSubview: dotButton];
-				// Set the button to hidden. We will only unhide it when we need it.
-				dotButton.hidden = YES;
-				
-				// When the decimal button is pressed, we send a message to ourself (the AppDelegate) which will then post a notification that will then append a decimal in the UITextField in the Appropriate View Controller.
-				[dotButton addTarget:self action:@selector(sendDecimal:)  forControlEvents:UIControlEventTouchUpInside];
-				
-				return;
-			}
-		}
-	}
-}
-
-- (void)sendDecimal:(id)sender 
-{
-	// Post a Notification that the Decimal Key was Pressed.
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"DecimalPressed" object:nil];	
-}
-
 
 
 
@@ -738,9 +673,6 @@
 //	NSLog(@"textFieldDidBeginEditing");
 //	currentTextField = textField;
 	
-	
-//	if (textField != unitsTextField)
-		[dotButton setHidden: NO];
 	
 	//self.navigationItem.rightBarButtonItem = addButton;
 	
@@ -762,19 +694,7 @@
 {
 //	currentTextField = nil;
 	[[self navigationItem] setRightBarButtonItem: editListButton];
-	[dotButton setHidden: YES];
-}
 
-- (void)addDecimal:(NSNotification *)notification 
-{
-	//NSLog(@"add decimal!");
-	
-	
-	if (![[editField text] containsString: @"."])
-		[editField setText: [[editField text] stringByAppendingString: @"."]];
-	
-	// Apend the Decimal to the TextField.
-	//	numericTextField.text = [numericTextField.text stringByAppendingString:@"."];
 }
 
 #pragma mark -
