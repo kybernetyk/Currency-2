@@ -124,6 +124,11 @@
 	[self appendValue:@"0"];
 }
 
+- (IBAction) clearField
+{
+	[returnValue setString: @""];
+	[self updateLabel];
+}
 
 // Standard Methods
 - (void)viewDidLoad 
@@ -155,7 +160,12 @@
 	[self updateLabel];
 	[super viewDidLoad];
 	
-	NSLog(@"done button: %@",doneButton);
+//	[clearButton setOpaque: NO];	
+//	[clearButton setBackgroundColor: [UIColor clearColor]];
+//	[[clearButton imageView] setAlpha: 0.0f];
+	
+
+//	NSLog(@"done button: %@",clearButton);
 }
 
 

@@ -17,6 +17,7 @@
 	IBOutlet UILabel *totalLabel;
 	
 	IBOutlet UIButton *doneButton;
+	IBOutlet UIButton *clearButton;
 	
 	double initValue;
 }
@@ -42,6 +43,7 @@
 - (IBAction) press0;
 - (IBAction) pressDot;
 - (IBAction) pressBack;
+- (IBAction) clearField;
 
 @end
 
