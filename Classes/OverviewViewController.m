@@ -254,6 +254,16 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRates) name: @"watchlistDidChange" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(defaultsDidChange:) name: NSUserDefaultsDidChangeNotification object:nil];
+	
+	bannerLoaded = NO;
+	isBannerVisible = NO;
+	tableAdVisibleFrame = [tableView frame];
+	tableStandardFrame = [tableView frame];
+	tableStandardFrame.origin.y -= 50;
+	tableStandardFrame.size.height += 50;
+	adOnscreenFrame = [bannerView frame];
+	adOffscreenFrame = [bannerView frame];
+	adOffscreenFrame.origin.y -= 80;
 }
 
 
@@ -265,7 +275,7 @@
 	
 	[self buildBookmarkBar];
 	[self updateTableView: self];
-	
+	[self bannerViewDidLoadAd: nil];
 }
 
 
@@ -284,8 +294,17 @@
 #ifdef CUSTOM_GRAPHICS	
 	[self.tableView.superview insertSubview: backgroundView belowSubview: self.tableView];
 #endif
-	
+
+	//TODO: reihenfolge fertauschen?
 	[super viewWillAppear:animated];
+
+
+	if (!isBannerVisible)
+	{
+		[bannerView setFrame: adOffscreenFrame];
+		[tableView setFrame: tableStandardFrame];
+	}
+	
 }
 
 /*
@@ -675,6 +694,60 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma mark iAd delegate
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+	NSLog(@"bannerViewActionShouldBegin:");
+	return YES;	
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	NSLog(@"banner did load ...");
+	bannerLoaded = YES;
+	
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+	BOOL iAdsEnabled = [defs boolForKey: @"iAdsEnabled"];
+	
+	if (!iAdsEnabled)
+	{		
+		
+		NSLog(@"iAds disabled ... won't show banner");		
+		return;
+	}
+
+	NSLog(@"iAds enabled ... showing banner");		
+
+	
+    if (!isBannerVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+		// assumes the banner view is offset 50 pixels so that it is not visible.
+        //banner.frame = CGRectOffset(banner.frame, 0, 50);
+		/*[bannerView setFrame: CGRectOffset([bannerView frame], 0, 150)];
+		 
+		 CGRect f = [tableView frame];
+		 f.origin.y += 50;
+		 f.size.height -= 50;
+		 [tableView setFrame: f];		*/
+		
+		[tableView setFrame: tableAdVisibleFrame];
+		[bannerView setFrame: adOnscreenFrame];
+		
+        [UIView commitAnimations];
+        isBannerVisible = YES;
+    }
+
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	
+	NSLog(@"failed to get $$$: %@",[error localizedDescription]);
+	
+}
 
 
 #pragma mark -

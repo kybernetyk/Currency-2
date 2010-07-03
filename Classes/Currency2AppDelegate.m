@@ -19,6 +19,7 @@
 @synthesize overviewViewController;
 @synthesize editListViewController;
 
+#define iAdsDefault YES
 - (void) registerUserDefaults
 {
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	
@@ -31,6 +32,7 @@
 //						 [NSNumber numberWithInt: 0], @"rightPickerState",						 
 						 @"Never", @"lastListUpdate",
 						 [NSNumber numberWithBool: NO], @"offlineMode",
+						 [NSNumber numberWithBool: iAdsDefault], @"iAdsEnabled",
 						 [NSNumber numberWithDouble: 1.0], @"bookmark0",
 						 [NSNumber numberWithDouble: 19.95], @"bookmark1",
  						 [NSNumber numberWithDouble: 49.95], @"bookmark2",

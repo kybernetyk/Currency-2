@@ -24,6 +24,8 @@
 	Reachability *reachability;
 	
 	BOOL isOnline;
+	
+	
 }
 
 @property (readwrite, assign) BOOL isOnline;

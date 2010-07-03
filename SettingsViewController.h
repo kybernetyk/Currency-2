@@ -12,6 +12,7 @@
 @interface SettingsViewController : UITableViewController 
 {
 	UISwitch *offlineModeSwitch;
+	UISwitch *iAdsSwitch;
 	
 	UITextField *bookmark0TextField;
 	UITextField *bookmark1TextField;

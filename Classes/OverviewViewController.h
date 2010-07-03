@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 #import "TenKeyPad.h"
+
 
 @interface OverviewViewController : UIViewController 
 {
@@ -25,6 +27,15 @@
 #ifdef CUSTOM_GRAPHICS
 	UIImageView *backgroundView;
 #endif
+
+	//iad stuff
+	IBOutlet ADBannerView *bannerView;
+	CGRect tableAdVisibleFrame;
+	CGRect tableStandardFrame;	
+	CGRect adOffscreenFrame;
+	CGRect adOnscreenFrame;
+	BOOL isBannerVisible;
+	BOOL bannerLoaded;
 }
 
 - (void) updateTableView: (id) sender;

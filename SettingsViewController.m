@@ -30,6 +30,16 @@
 	[defs setObject: om forKey: @"offlineMode"];
 }
 
+- (void) iAdsSwitchDidChange: (id) sender
+{
+	BOOL iAdsEnabled = [iAdsSwitch isOn];
+	NSNumber *ie = [NSNumber numberWithBool: iAdsEnabled];
+	
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+	[defs setObject: ie forKey: @"iAdsEnabled"];
+	
+}
+
 
 - (void)viewDidLoad 
 {
@@ -41,6 +51,8 @@
 	offlineModeSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
 	[offlineModeSwitch addTarget: self action: @selector(offlineSwitchDidChange:) forControlEvents: UIControlEventValueChanged];
 	
+	iAdsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+	[iAdsSwitch addTarget: self action: @selector(iAdsSwitchDidChange:) forControlEvents: UIControlEventValueChanged];
 	
 	
 	
@@ -92,7 +104,10 @@
 	
 	BOOL offlineMode = [[defs objectForKey: @"offlineMode"] boolValue];
 	[offlineModeSwitch setOn: offlineMode];
-	
+
+	BOOL iAdsEnabled = [[defs objectForKey: @"iAdsEnabled"] boolValue];
+	[iAdsSwitch setOn: iAdsEnabled];
+
 	
 	
 	[super viewWillAppear:animated];
@@ -147,7 +162,9 @@
 	
 	if (section == 1)
 		return NSLocalizedString(@"Quick Access Bookmarks","quick access bookmarks");
-	
+
+	if (section == 2)	
+		return NSLocalizedString(@"iAds","quick access bookmarks");
 	return nil;
 }
 
@@ -158,14 +175,15 @@
 		return NSLocalizedString(@"Forces Currency 2 to stay offline.",@"");
 	if (section == 1)
 		return NSLocalizedString(@"The green bar in the main view.",@"");
-	
+	if (section == 2)
+		return NSLocalizedString(@"Enable or disable iAds.",@"");
 	return nil;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return 2;
+    return 3;
 }
 
 
@@ -177,6 +195,9 @@
 	
 	if (section == 1)
 		return 5;
+
+	if (section == 2)
+		return 1;
 	
 	return 0;
 }
@@ -185,6 +206,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
+	//offline mode
     if ([indexPath section] == 0)
 	{
 		if ([indexPath row] == 0)
@@ -208,6 +230,7 @@
 		}
 	}
 
+	//bookmarks
 	if ([indexPath section] == 1)
 	{
 		NSString *CellIdentifier = @"QuickKeyCell";
@@ -255,6 +278,31 @@
 		
 		return cell;
 		
+	}
+	
+	
+	//iAds
+	if ([indexPath section] == 2)
+	{
+		if ([indexPath row] == 0)
+		{
+			NSString *CellIdentifier = @"iAdsCell";
+			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];			
+			
+			if (cell == nil) 
+			{
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				[cell setSelectionStyle: UITableViewCellSelectionStyleNone];
+				//	[cell addSubview: mySwitch];
+				//[cell setAccessoryView: mySwitch];
+				
+				[cell setAccessoryView: iAdsSwitch];
+			}
+			
+			// Set up the cell...
+			[[cell textLabel] setText: NSLocalizedString(@"Show iAds",@"")];
+			return cell;
+		}
 	}
 	
     
@@ -418,7 +466,10 @@
 
 #pragma mark -
 #pragma mark dealloc
-- (void)dealloc {
+- (void)dealloc 
+{
+	[offlineModeSwitch release], offlineModeSwitch = nil;
+	[iAdsSwitch release], iAdsSwitch = nil;
     [super dealloc];
 }
 
