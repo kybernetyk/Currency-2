@@ -19,7 +19,7 @@
 @synthesize overviewViewController;
 @synthesize editListViewController;
 
-#define iAdsDefault YES
+#define iAdsDefault NO
 - (void) registerUserDefaults
 {
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];	

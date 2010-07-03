@@ -164,7 +164,7 @@
 		return NSLocalizedString(@"Quick Access Bookmarks","quick access bookmarks");
 
 	if (section == 2)	
-		return NSLocalizedString(@"iAds","quick access bookmarks");
+		return NSLocalizedString(@"iAds","iAds");
 	return nil;
 }
 
