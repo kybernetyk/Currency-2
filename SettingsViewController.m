@@ -73,7 +73,6 @@
 - (BOOL) textFieldShouldReturn: (UITextField *)textField
 {
 	[self hideKeypad: self];
-	[textField resignFirstResponder];
 	return YES;
 }
 

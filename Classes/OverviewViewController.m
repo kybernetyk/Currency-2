@@ -174,17 +174,13 @@
 	CGRect adOnscreenFrame;*/
 	
 	isBannerVisible = NO;
-	
 	tableAdVisibleFrame = [tableView frame];
 	tableStandardFrame = [tableView frame];
-
 	tableStandardFrame.origin.y -= 50;
 	tableStandardFrame.size.height += 50;
-	
 	adOnscreenFrame = [bannerView frame];
 	adOffscreenFrame = [bannerView frame];
 	adOffscreenFrame.origin.y -= 80;
-	
 }
 
 - (void) createSetFrom: (NSString *) fromCurrenyISO to: (NSString *) toCurrencyISO withResultsController: (NSFetchedResultsController*) cont
@@ -287,15 +283,6 @@
 	
 	if (!isBannerVisible)
 	{
-		/*[bannerView setFrame: CGRectOffset([bannerView frame], 0, -150)];
-		
-		CGRect f = [tableView frame];
-		f.origin.y -= 50;
-		f.size.height += 50;
-		
-		[tableView setFrame: f];		*/
-		
-		
 		[bannerView setFrame: adOffscreenFrame];
 		[tableView setFrame: tableStandardFrame];
 	}
