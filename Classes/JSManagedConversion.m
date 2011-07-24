@@ -107,6 +107,8 @@
 	NSLog(@"connection did finish!");
 	
 	NSString *str =  [[NSString alloc] initWithData: tempUpdateData encoding: NSUTF8StringEncoding];
+
+#error HIER BEFICKEN
 	
 	[self setConversionRatio: [NSDecimalNumber decimalNumberWithString: str]];
 	[self setLastUpdated: [NSDate date]];
